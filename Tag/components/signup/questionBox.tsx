@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, StyleSheet, FlexAlignType } from "react-native";
-import Colors from "../branding/Colors";
+import Colors from "../branding/Colors/Colors.ts";
+import { KeyboardType } from "react-native";
 
 interface questionBoxProps {
   alignment?: FlexAlignType;
@@ -42,15 +43,6 @@ const QuestionBox: React.FC<questionBoxProps> = (props: questionBoxProps) => {
           />
         </View>
       </View>
-      {props.onConfirm && inputText && !props.disabled && (
-        <FabButton
-          onPress={() => {
-            props.onConfirm && props.onConfirm(inputText);
-          }}
-        >
-          <ArrowRight color="black" width={30} height={30} strokeWidth={2} />
-        </FabButton>
-      )}
     </View>
   );
 };
