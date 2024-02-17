@@ -1,13 +1,14 @@
 export default {
   white: "#fcfcfc",
   black: "#252525",
-  blue: "#4474fa",
-  purple: "#722ce3",
-  red: "#c12852",
-  orange: "#c04918",
-  yellow: "#8c6e1f",
-  green: "#348521",
-  spotify: "#70cc69",
-  pink: "#d6005c",
-  darkGray: "#292929",
+  charisma: "#E1F096", // light lime green
+  violet: "#ABC3FF", // light violet
+  rooted: "#2E4C17", // dark forest green
+  lazy: "#FB712C", // deep orange
+  vetiver: "#FAEAD7", // cream
+  poet: "#C34725", // brick red
+  mustard: "#E7CB5D", // lighter yellow
+  sherbert: "#F9935A", // lighter orange
+  bright: "#EE6157",  // lighter red
+  moss: "#5F8A3F" // lighter green
 };
