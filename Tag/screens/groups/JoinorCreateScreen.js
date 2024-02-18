@@ -35,11 +35,11 @@ const GroupsOrFriends = ({ selected, setSelected }) => {
 
 const CreateOrJoinGroup = ({ navigation }) => {
   const handleCreatePress = () => {
-    navigation.navigate('CreateGroup');
+    navigation.navigate('Missing');
   };
 
   const handleJoinPress = () => {
-    navigation.navigate('JoinGroup');
+    navigation.navigate('Missing');
   };
 
   return (

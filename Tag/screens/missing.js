@@ -2,13 +2,14 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Colors from "../branding/Colors";
 import FloatingBackButton from "../components/backButton";
+import { getLineAndCharacterOfPosition } from "typescript";
 
 const InProgressScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <FloatingBackButton navigation={navigation} />
       <Text style={styles.text}>This feature is still in progress.</Text>
-      <Text style={styles.text}>Please check back later.</Text>
+      <Text style={styles.text}>Please check back later  :)</Text>
     </View>
   );
 };
@@ -18,7 +19,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: Colors.lazy,
+    backgroundColor: Colors.violet,
     padding: 20,
   },
   text: {
@@ -26,6 +27,8 @@ const styles = StyleSheet.create({
     color: Colors.white,
     textAlign: "center",
     marginBottom: 10,
+    fontFamily: "Cutive",
+    lineHeight: 24,
   },
 });
 
