@@ -13,6 +13,7 @@ import PromptBox from "../../components/homepage/PromptBox";
 import YourResponse from "../../components/homepage/YourResponse";
 import Response from "../../components/homepage/promptResponse";
 import Colors from "../../branding/Colors";
+import ResponseReminder from "../../components/homepage/ResponseReminder";
 
 function HomeScreen({ route }) {
   const [myResponse, setMyResponse] = useState(null); // Track if user's response has been submitted
@@ -166,7 +167,12 @@ function HomeScreen({ route }) {
       >
         <SafeAreaView>
           <PromptBox text={currentPrompt} />
-          {!myResponse && <YourResponse onSubmit={handleResponseSubmit} />}
+          {!myResponse && (
+            <View>
+              <YourResponse onSubmit={handleResponseSubmit} />
+              <ResponseReminder />
+            </View>
+          )}
           {myResponse && (
             <View style={styles.responsesContainer}>
               <FlatList
