@@ -5,11 +5,7 @@ import Colors from "../../branding/Colors";
 
 import { Avatar, Button, Card, Text } from 'react-native-paper';
 
-interface promptBoxProps {
-  text?: string;
-}
-
-const PromptBox: React.FC<promptBoxProps> = (props: promptBoxProps) => {
+const PromptBox = (props) => {
   let prompt = props.text;
   
   return (
@@ -24,12 +20,11 @@ const PromptBox: React.FC<promptBoxProps> = (props: promptBoxProps) => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.white,
-    paddingVertical: 20,
+    paddingVertical: 30,
     paddingHorizontal: 12,
     marginLeft: 20,
-    // Full width
     justifyContent: "center",
-    // Shadow
+
   },
   surround: {
     flexDirection: "column",
@@ -41,6 +36,7 @@ const styles = StyleSheet.create({
   question: {
     ...fonts.question,
     textAlign: "center",
+    color: "black"
   },
 });
 
