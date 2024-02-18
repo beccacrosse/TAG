@@ -157,7 +157,7 @@ function HomeScreen({ route }) {
       {
         text: responseText,
         image: imageUri,
-        userName: myName,
+        name: "Your Tag",
         avi: { uri: profilePic },
         timestamp: myTimestamp,
       },
