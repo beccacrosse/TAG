@@ -12,6 +12,11 @@ const textStyle = StyleSheet.create({
     fontSize: 44,
     color: Colors.white,
   },
+  header: {
+    fontFamily: "PermanentMarker",
+    fontSize: 30,
+    color: Colors.white,
+  },
 });
 
 export default textStyle;
