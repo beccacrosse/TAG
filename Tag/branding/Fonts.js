@@ -11,6 +11,22 @@ const textStyle = StyleSheet.create({
     fontSize: 44,
     color: Colors.white,
   },
+  prompt: {
+    fontFamily: "Cutive",
+    fontSize: 20,
+    color: Colors.black,
+    lineHeight: 40
+  },
+  promptResponse: {
+    fontFamily: "Cutivemono",
+    fontSize: 20,
+    color: Colors.black
+  },
+  responseHeader: {
+    fontFamily: "Cutive",
+    fontSize: 10,
+    color: Colors.black
+  }
 });
 
 export default textStyle;
