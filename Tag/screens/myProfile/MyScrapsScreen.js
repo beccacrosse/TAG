@@ -33,10 +33,6 @@ function MyScrapsScreen({ navigation }) {
         console.error("Error fetching profile picture:", error);
       }
     };
-
-    fetchProfilePicture();
-  }, []);
-  useEffect(() => {
     const fetchUserName = async () => {
       try {
         const userId = "1";
@@ -46,7 +42,7 @@ function MyScrapsScreen({ navigation }) {
         console.error("Error fetching profile picture:", error);
       }
     };
-
+    fetchProfilePicture();
     fetchUserName();
   }, []);
   return (
