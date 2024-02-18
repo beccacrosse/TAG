@@ -21,8 +21,8 @@ const FloatingBackButton = () => {
 const styles = StyleSheet.create({
   backButton: {
     position: "absolute",
-    top: "5%",
-    left: "3%",
+    top: "6%",
+    left: "6%",
     zIndex: 10,
   },
 });

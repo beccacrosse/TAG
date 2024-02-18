@@ -140,7 +140,7 @@ const BirthdayPicker: React.FC<birthdayAnswerProps> = (
         />
       </View>
       {isComplete && (
-        <NextButton onPress={() => navigation.navigate("Birthday2")} />
+        <NextButton onPress={() => navigation.navigate("ProfilePic3")} />
       )}
     </View>
   );
