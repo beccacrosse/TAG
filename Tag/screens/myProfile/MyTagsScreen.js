@@ -43,7 +43,7 @@ function MyTagsScreen({ navigation }) {
             style={styles.profilePic}
           />
 
-          <Text style={styles.title}>Hots 🍑🐜</Text>
+          <Text style={styles.title}>Personal 🍑🐜</Text>
           <View style={styles.tabContainer}>
             <TouchableOpacity
               onPress={() => navigation.navigate("MyTagsScreen")}

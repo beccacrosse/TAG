@@ -11,7 +11,7 @@ const GroupSelector = () => {
 
   const handleSelectGroup = (groupName) => {
     setSelectedGroup(groupName);
-    navigation.navigate("Home", { selectedGroupName: groupName });
+    navigation.navigate("TagsScreen", { selectedGroupName: groupName });
   };
 
   return (
