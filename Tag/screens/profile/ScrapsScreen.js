@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import FloatingBackButton from "../../components/backButton";
-import UserProfilePic from "../../assets/images/userprofilepic.jpg";
+import UserProfilePic from "../../assets/images/lucy.jpg";
 import Colors from "../../branding/Colors";
 import Fonts from "../../branding/Fonts";
 import GallerySection from "../../components/ScrapComponent";

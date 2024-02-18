@@ -4,8 +4,8 @@ const data = [
     question: "What's something that you think I need to hear right now?",
     numberOfAnswers: "2",
     images: [
-      require("./assets/images/userprofilepic.jpg"),
-      require("./assets/images/amazon_pfp.png"),
+      require("./assets/images/lucy.jpg"),
+      require("./assets/images/dia.png"),
     ],
   },
   {
@@ -13,8 +13,8 @@ const data = [
     question: "Send the last photo in your camera roll",
     numberOfAnswers: "2",
     images: [
-      require("./assets/images/userprofilepic.jpg"),
-      require("./assets/images/amazon_pfp.png"),
+      require("./assets/images/lucy.jpg"),
+      require("./assets/images/dia.png"),
     ],
   },
   {
@@ -22,9 +22,9 @@ const data = [
     question: "What song just feels like home?",
     numberOfAnswers: "3",
     images: [
-      require("./assets/images/userprofilepic.jpg"),
-      require("./assets/images/amazon_pfp.png"),
-      require("./assets/images/amazon_pfp.png"),
+      require("./assets/images/lucy.jpg"),
+      require("./assets/images/julia.jpeg"),
+      require("./assets/images/dia.png"),
     ],
   },
   {
@@ -32,31 +32,31 @@ const data = [
     question: "What song just feels like home?",
     numberOfAnswers: "3",
     images: [
-      require("./assets/images/userprofilepic.jpg"),
-      require("./assets/images/amazon_pfp.png"),
-      require("./assets/images/amazon_pfp.png"),
+      require("./assets/images/lucy.jpg"),
+      require("./assets/images/julia.jpeg"),
+      require("./assets/images/dia.png"),
     ],
   },
   {
     id: "5",
     question: "What song just feels like home?",
     numberOfAnswers: "1",
-    images: [require("./assets/images/userprofilepic.jpg")],
+    images: [require("./assets/images/lucy.jpg")],
   },
   {
     id: "6",
     question: "What song just feels like home?",
     numberOfAnswers: "1",
-    images: [require("./assets/images/userprofilepic.jpg")],
+    images: [require("./assets/images/lucy.jpg")],
   },
   {
     id: "7",
     question: "What song just feels like home?",
     numberOfAnswers: "3",
     images: [
-      require("./assets/images/userprofilepic.jpg"),
-      require("./assets/images/amazon_pfp.png"),
-      require("./assets/images/amazon_pfp.png"),
+      require("./assets/images/lucy.jpg"),
+      require("./assets/images/julia.jpeg"),
+      require("./assets/images/dia.png"),
     ],
   },
   {
@@ -64,9 +64,9 @@ const data = [
     question: "What song just feels like home?",
     numberOfAnswers: "3",
     images: [
-      require("./assets/images/userprofilepic.jpg"),
-      require("./assets/images/amazon_pfp.png"),
-      require("./assets/images/amazon_pfp.png"),
+      require("./assets/images/lucy.jpg"),
+      require("./assets/images/julia.jpeg"),
+      require("./assets/images/dia.png"),
     ],
   },
   {
@@ -74,9 +74,9 @@ const data = [
     question: "What song just feels like home?",
     numberOfAnswers: "3",
     images: [
-      require("./assets/images/userprofilepic.jpg"),
-      require("./assets/images/amazon_pfp.png"),
-      require("./assets/images/amazon_pfp.png"),
+      require("./assets/images/lucy.jpg"),
+      require("./assets/images/julia.jpeg"),
+      require("./assets/images/dia.png"),
     ],
   },
 ];
