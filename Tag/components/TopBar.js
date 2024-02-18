@@ -42,7 +42,7 @@ function TopBar() {
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => navigation.navigate("TagsScreen")}
+          onPress={() => navigation.navigate("MyTagsScreen")}
           style={styles.profilePicButton}
         >
           <Image

@@ -14,23 +14,44 @@ import UserProfilePic from "../../assets/images/lucy.jpg";
 import Colors from "../../branding/Colors";
 import Fonts from "../../branding/Fonts";
 import data from "../../promptData";
-import GroupPic from "../../assets/images/group.jpeg";
+import { getUserProfilePic } from "../../DatabaseManager";
+import { useState, useEffect } from "react";
 
-function TagsScreen({ navigation }) {
+function MyTagsScreen({ navigation }) {
+  const [profilePic, setProfilePic] = useState(null);
+
+  useEffect(() => {
+    const fetchProfilePicture = async () => {
+      try {
+        const userId = "1";
+        const pic = await getUserProfilePic(userId);
+        setProfilePic(pic);
+      } catch (error) {
+        console.error("Error fetching profile picture:", error);
+      }
+    };
+
+    fetchProfilePicture();
+  }, []);
   return (
     <View style={styles.container}>
       <FloatingBackButton navigation={navigation} />
       <ScrollView style={styles.scrollView}>
         <View style={styles.header}>
-          <Image source={GroupPic} style={styles.profilePic} />
+          <Image
+            source={profilePic ? { uri: profilePic } : UserProfilePic}
+            style={styles.profilePic}
+          />
 
-          <Text style={styles.title}>Hots 🍑🐜</Text>
+          <Text style={styles.title}>Personal 🍑🐜</Text>
           <View style={styles.tabContainer}>
-            <TouchableOpacity onPress={() => navigation.navigate("TagsScreen")}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("MyTagsScreen")}
+            >
               <Text style={styles.tabActive}>Tags (231)</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => navigation.navigate("ScrapsScreen")}
+              onPress={() => navigation.navigate("MyScrapsScreen")}
             >
               <Text style={styles.tab}>Scraps (347)</Text>
             </TouchableOpacity>
@@ -103,4 +124,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TagsScreen;
+export default MyTagsScreen;
