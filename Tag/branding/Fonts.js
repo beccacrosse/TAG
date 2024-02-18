@@ -33,6 +33,11 @@ const textStyle = StyleSheet.create({
     fontSize: 24,
     color: Colors.white,
   },
+  profileText: {
+    fontFamily: "Poppins",
+    fontSize: 16,
+    color: Colors.white,
+  },
 });
 
 export default textStyle;
