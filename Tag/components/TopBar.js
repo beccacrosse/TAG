@@ -43,7 +43,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     height: "auto",
     paddingHorizontal: 10,
-    backgroundColor: "#6200EE",
   },
   groupsButton: {
     width: 40,
