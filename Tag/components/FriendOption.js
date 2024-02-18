@@ -1,12 +1,15 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
-import Fonts from '../branding/Fonts';
+import { View, Text, StyleSheet } from 'react-native';
+import { Avatar, Card } from 'react-native-paper'; 
 
-const FriendOption = ({ name, onSelect }) => {
+const FriendOption = ({ userName, profilePic }) => {
   return (
-    <TouchableOpacity onPress={() => onSelect(name)} style={styles.container}>
-      <Text style={styles.text}>{name}</Text>
-    </TouchableOpacity>
+    <Card style={styles.container}>
+      <Card.Title style={styles.text}
+        title={userName}
+        left={(props) => <Avatar.Image {...props} source={profilePic} size={40} />}
+      />
+    </Card>
   );
 };
 
@@ -14,7 +17,6 @@ const styles = StyleSheet.create({
   container: {
     padding: 10,
     marginVertical: 5,
-    //backgroundColor: '#E0E0E0',
     borderRadius: 5,
   },
   text: {
