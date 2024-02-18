@@ -1,0 +1,6 @@
+@font-face {
+  font-family: "Cutive";
+  src: local("Cutive"),
+    url("../assets/fonts/Cutive-Regular.ttf") format("truetype");
+  font-style: normal;
+}

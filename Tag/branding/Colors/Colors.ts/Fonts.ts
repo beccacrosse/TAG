@@ -1,3 +1,0 @@
-export default {
-  questionFont: "cutive",
-};
