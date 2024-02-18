@@ -11,18 +11,14 @@ const GroupSelector = () => {
 
   const handleSelectGroup = (groupName) => {
     setSelectedGroup(groupName);
-    navigation.navigate("TagsScreen", { selectedGroupName: groupName });
-  };
-  const missing = (groupName) => {
-    setSelectedGroup(groupName);
-    navigation.navigate("Missing", { selectedGroupName: groupName });
+    navigation.navigate("Home", { selectedGroupName: groupName });
   };
 
   return (
     <View style={[styles.container, styles.selectedText]}>
-      <GroupOption name="1. Backend Baddies" onSelect={handleSelectGroup} />
-      <GroupOption name="2. Family" onSelect={missing} />
-      <GroupOption name="3. Home Friends" onSelect={missing} />
+      <GroupOption name="Backend Baddies" onSelect={handleSelectGroup} />
+      <GroupOption name="Family" onSelect={handleSelectGroup} />
+      <GroupOption name="Home Friends" onSelect={handleSelectGroup} />
     </View>
   );
 };
@@ -31,6 +27,13 @@ const GroupSelector = () => {
 //<Text style={styles.selectedText}>Selected Group: {selectedGroup}</Text>
 
 const styles = StyleSheet.create({
+  button: {
+    backgroundColor: "#007bff", // Bootstrap primary button color
+    padding: 10,
+    margin: 5,
+    borderRadius: 5,
+    alignItems: "center",
+  },
   container: {
     padding: 20,
   },

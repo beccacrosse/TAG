@@ -17,9 +17,11 @@ import photos from "../../scrapPhotos";
 import videos from "../../scrapVideos";
 import { useState, useEffect } from "react";
 import { getUserProfilePic } from "../../DatabaseManager";
+import { getUsername } from "../../DatabaseManager";
 
 function MyScrapsScreen({ navigation }) {
   const [profilePic, setProfilePic] = useState(null);
+  const [username, setUsername] = useState(null);
 
   useEffect(() => {
     const fetchProfilePicture = async () => {
@@ -31,8 +33,17 @@ function MyScrapsScreen({ navigation }) {
         console.error("Error fetching profile picture:", error);
       }
     };
-
+    const fetchUserName = async () => {
+      try {
+        const userId = "1";
+        const pic = await getUsername(userId);
+        setUsername(pic);
+      } catch (error) {
+        console.error("Error fetching profile picture:", error);
+      }
+    };
     fetchProfilePicture();
+    fetchUserName();
   }, []);
   return (
     <View style={styles.container}>
@@ -43,7 +54,9 @@ function MyScrapsScreen({ navigation }) {
             source={profilePic ? { uri: profilePic } : UserProfilePic}
             style={styles.profilePic}
           />
-          <Text style={styles.title}>Your Profile</Text>
+          <Text style={styles.title}>
+            {username ? username : "Your Profile"}
+          </Text>
           <View style={styles.tabContainer}>
             <TouchableOpacity
               onPress={() => navigation.navigate("MyTagsScreen")}

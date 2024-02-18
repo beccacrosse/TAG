@@ -16,9 +16,11 @@ import Fonts from "../../branding/Fonts";
 import data from "../../promptData";
 import { getUserProfilePic } from "../../DatabaseManager";
 import { useState, useEffect } from "react";
+import { getUsername } from "../../DatabaseManager";
 
 function MyTagsScreen({ navigation }) {
   const [profilePic, setProfilePic] = useState(null);
+  const [username, setUsername] = useState(null);
 
   useEffect(() => {
     const fetchProfilePicture = async () => {
@@ -30,8 +32,17 @@ function MyTagsScreen({ navigation }) {
         console.error("Error fetching profile picture:", error);
       }
     };
-
+    const fetchUserName = async () => {
+      try {
+        const userId = "1";
+        const pic = await getUsername(userId);
+        setUsername(pic);
+      } catch (error) {
+        console.error("Error fetching profile picture:", error);
+      }
+    };
     fetchProfilePicture();
+    fetchUserName();
   }, []);
   return (
     <View style={styles.container}>
@@ -43,7 +54,9 @@ function MyTagsScreen({ navigation }) {
             style={styles.profilePic}
           />
 
-          <Text style={styles.title}>Your Profile</Text>
+          <Text style={styles.title}>
+            {username ? username : "Your Profile"}
+          </Text>
           <View style={styles.tabContainer}>
             <TouchableOpacity
               onPress={() => navigation.navigate("MyTagsScreen")}

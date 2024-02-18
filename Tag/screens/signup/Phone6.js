@@ -1,11 +1,38 @@
+// Phone6.js
 import React from "react";
-import { View, TextInput, Button, StyleSheet } from "react-native";
+import { View, StyleSheet, TextInput, Button, Alert } from "react-native";
 import QuestionBox from "../../components/signup/questionBox";
 import PhoneAnswer from "../../components/signup/phoneAnswer";
 import Colors from "../../branding/Colors";
 import FloatingBackButton from "../../components/backButton";
+import { useSignup } from "../../SignupContext";
 
 const Phone6 = ({ navigation }) => {
+  const {
+    phoneNumber,
+    name,
+    birthday,
+    profilePicURL,
+    setPhoneNumber,
+    setName,
+    setBirthday,
+    setProfilePicURL,
+    saveUserDataToFirestore,
+  } = useSignup();
+
+  const handleSignUp = () => {
+    // Validate user data
+    if (!phoneNumber || !name || !birthday || !profilePicURL) {
+      console.log("phoneNumber:", phoneNumber);
+      console.log("name:", name);
+      console.log("birthday:", birthday);
+      console.log("profilePicURL:", profilePicURL);
+      Alert.alert("Error", "Please fill in all fields.");
+      return;
+    }
+    saveUserDataToFirestore();
+  };
+
   return (
     <View style={styles.container}>
       <FloatingBackButton navigation={navigation} />

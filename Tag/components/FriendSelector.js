@@ -11,7 +11,7 @@ const FriendSelector = () => {
 
   const handleSelectFriend = (FriendName) => {
     setSelectedFriend(FriendName); // Corrected from setSelectedGroup to setSelectedFriend
-    navigation.navigate('Home', { selectedFriendName: FriendName }); 
+    navigation.navigate('Missing', { selectedFriendName: FriendName }); 
   };
 
   return (
