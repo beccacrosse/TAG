@@ -1,27 +1,24 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import GroupOption from './GroupOption'; 
+import FriendOption from './FriendOption'; 
 import { useNavigation } from '@react-navigation/native';
 import Fonts from '../branding/Fonts';
 
 //this is not currently scrollable, need to implement for future use
-const GroupSelector = () => {
-  const [selectedGroup, setSelectedGroup] = useState('');
+const FriendSelector = () => {
+  const [selectedFriend, setSelectedFriend] = useState('');
   const navigation = useNavigation(); 
 
-  const handleSelectGroup = (groupName) => {
-    setSelectedGroup(groupName);
-    navigation.navigate('Home', { selectedGroupName: groupName }); 
+  const handleSelectFriend = (FriendName) => {
+    setSelectedFriend(FriendName); // Corrected from setSelectedGroup to setSelectedFriend
+    navigation.navigate('Home', { selectedFriendName: FriendName }); 
   };
 
   return (
-    <View style={[styles.container, styles.selectedText]}>
-      <GroupOption name="1. Group 1" onSelect={handleSelectGroup} />
-      <GroupOption name="2. Group 2" onSelect={handleSelectGroup} />
-      <GroupOption name="3. Group 3" onSelect={handleSelectGroup} />
-
-  
-      
+    <View style={[styles.container]}>
+      <FriendOption name="Bhad Baby" onSelect={handleSelectFriend} />
+      <FriendOption name="FloMo Dining" onSelect={handleSelectFriend} />
+      <FriendOption name="Lucy's Dad" onSelect={handleSelectFriend} />
     </View>
   );
 };
@@ -42,4 +39,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default GroupSelector;
+export default FriendSelector;

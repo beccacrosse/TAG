@@ -2,20 +2,18 @@ import React, { useState } from 'react';
 import { View, TouchableOpacity, Text, StyleSheet, Dimensions } from 'react-native';
 import TopBar from '../../components/TopBar'; 
 import GroupSelector from '../../components/GroupSelector';
+import FriendSelector from '../../components/FriendSelector';
 import Colors from "../../branding/Colors";
 import Fonts from '../../branding/Fonts';
 const { width, height } = Dimensions.get('window');
 
-const GroupsOrFriends = () => {
-  const [selected, setSelected] = useState('Groups');
+const GroupsOrFriends = ({ selected, setSelected }) => {
   const handleGroupsPress = () => {
     setSelected('Groups');
-    // Handle Groups press
   };
 
   const handleFriendsPress = () => {
     setSelected('Friends');
-    // Handle Friends press
   };
 
   return (
@@ -102,9 +100,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 28,
     fontFamily: "Cutive",
-    lineHeight: 34,
+    lineHeight: 40,
     color: 'white',
-
   },
 });
 
@@ -117,21 +114,34 @@ const bigScreen = StyleSheet.create({
   section: {
     marginTop: height * 0.02,
   },
+  weirdSection: {
+    marginTop: 0,
+  },
+  groupSection: {
+    marginTop: height * 0.02,
+    marginLeft:width*.01,
+    marginRight: width*.01,
+  }
 });
 
 const JoinOrCreateScreen = ({ navigation }) => {
+  const [selected, setSelected] = useState('Groups');
+
   return (
     <View style={bigScreen.mainContainer}>
       <TopBar />
       <View style={bigScreen.section}>
-        <GroupsOrFriends />
+        <GroupsOrFriends selected={selected} setSelected={setSelected} />
       </View>
-      <View style={bigScreen.section}>
+      <View style={bigScreen.weirdSection}>
         <CreateOrJoinGroup navigation={navigation} />
       </View>
-      <View style={bigScreen.section}>
-        {/* Your GroupSelector component */}
-        <GroupSelector />
+      <View style={bigScreen.groupSection}>
+        {selected === 'Groups' ? (
+          <GroupSelector />
+        ) : (
+          <FriendSelector />
+        )}
       </View>
     </View>
   );
