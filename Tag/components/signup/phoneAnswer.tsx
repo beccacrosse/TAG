@@ -3,7 +3,7 @@ import { View, StyleSheet, TextInput } from "react-native";
 import { KeyboardType } from "react-native";
 import fonts from "../../branding/Fonts";
 import Colors from "../../branding/Colors";
-import NextButton from "../../components/nextButton"; // Ensure the path is correct
+import NextButton from "../../components/nextButton";
 
 interface phoneAnswerProps {
   keyboardType?: KeyboardType;
