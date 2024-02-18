@@ -21,7 +21,7 @@ This journey taught us invaluable lessons in app development, teamwork, and desi
 # What's next for Tag
 Encouraged by positive feedback and the potential impact on fostering connections (we asked our friends and long-distance friends for feedback :)), we're excited to further develop "Tag." Plans include expanding its features, refining the user experience based on real-world testing, and potentially exploring avenues for wider adoption. We would love to build it out to include more back-end, user authentication, mass database storage and more. Our vision for "Tag" goes beyond a project; it's about creating a platform that treats the loneliness academics, enriches friendships and bridges distances with heartfelt conversations.
 
-WATCH OUR DEMO: 
+# Demo Vid 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=[ajkTnGD7nxI]
 " target="_blank"><img src="http://img.youtube.com/vi/ajkTnGD7nxI/0.jpg" 
 alt="TAG-DEMO" width="240" height="180" border="10" /></a>
