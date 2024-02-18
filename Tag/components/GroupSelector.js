@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   selectedText: {
-    marginTop: 20,
     fontSize: 16,
     fontWeight: "bold",
     fontFamily: "Cutive",
