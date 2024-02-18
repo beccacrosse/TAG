@@ -13,7 +13,7 @@ const TextInputBox = ({ onNameSubmit }) => {
         style={styles.input}
         onChangeText={setText}
         value={text}
-        placeholder="Enter..."
+        placeholder="Name"
         maxLength={20}
       />
       {text.length > 0 && (
