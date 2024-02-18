@@ -15,6 +15,7 @@ import YourResponse from "../../components/homepage/YourResponse";
 import Response from "../../components/homepage/promptResponse";
 import Colors from "../../branding/Colors";
 import ResponseReminder from "../../components/homepage/ResponseReminder";
+import { getUserProfilePic } from "../../DatabaseManager";
 
 function HomeScreen({ route }) {
   const [myResponse, setMyResponse] = useState(null); // Track if user's response has been submitted
@@ -126,6 +127,8 @@ function HomeScreen({ route }) {
       text={item.text}
     />
   );
+  const [profilePic, setProfilePic] = useState(null);
+
   const { selectedGroupName } = route.params || {};
   const [currentPrompt, setCurrentPrompt] = useState(prompt1);
   const [responses, setResponses] = useState(data1);
@@ -140,7 +143,7 @@ function HomeScreen({ route }) {
       {
         text: responseText,
         userName: myName,
-        avi: myPfp,
+        avi: profilePic,
         timestamp: myTimestamp,
       },
     ]);
@@ -165,6 +168,19 @@ function HomeScreen({ route }) {
         setResponses(data1);
     }
   }, [selectedGroupName]);
+
+  useEffect(() => {
+    const fetchProfilePicture = async () => {
+      try {
+        const userId = "1";
+        const pic = await getUserProfilePic(userId);
+        setProfilePic(pic);
+      } catch (error) {
+        console.error("Error fetching profile picture:", error);
+      }
+    };
+    fetchProfilePicture();
+  }, []);
 
   return (
     <View style={styles.container}>
