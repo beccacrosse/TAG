@@ -1,17 +1,16 @@
 import React from "react";
 import { View, TextInput, Button, StyleSheet } from "react-native";
 import Colors from "../../branding/Colors";
-import PhoneInput from "../../components/signup/phoneAnswer";
 import QuestionBox from "../../components/signup/questionBox";
 import FloatingBackButton from "../../components/backButton";
+import ImagePicker from "../../components/photoButton";
 
 const ProfilePic3 = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <FloatingBackButton navigation={navigation} />
-      <QuestionBox question="What's your phone number?" />
-      <PhoneInput />
-      <Button title="Next" onPress={() => navigation.navigate("ProfilePic3")} />
+      <QuestionBox question="Add a profile picture!" />
+      <ImagePicker />
     </View>
   );
 };
