@@ -102,7 +102,6 @@ const data = [
       "../../assets/images/userprofilepic.jpg",
     ],
   },
-  // ... more tags
 ];
 
 function TagsScreen({ navigation }) {
@@ -160,7 +159,7 @@ const styles = StyleSheet.create({
   tabActive: {
     color: "white",
     fontSize: 22,
-    fontFamily: "Poppins",
+    fontFamily: Fonts.PoppinsBold.fontFamily,
     borderBottomWidth: 2,
     borderBottomColor: "white",
   },

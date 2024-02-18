@@ -38,6 +38,9 @@ const textStyle = StyleSheet.create({
     fontSize: 28,
     color: Colors.white,
   },
+  poppinsBold: {
+    fontFamily: "PoppinsBold",
+  },
 });
 
 export default textStyle;
