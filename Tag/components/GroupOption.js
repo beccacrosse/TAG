@@ -15,15 +15,6 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     marginVertical: 5,
-    borderRadius: 5,
-    borderColor: Colors.white,
-    borderWidth: 1,
-    alignItems: "center",
-    borderRadius: 20,
-    width: "70%",
-    justifyContent: "center",
-    alignContent: "center",
-    alignSelf: "center",
   },
   text: {
     fontSize: 16,
