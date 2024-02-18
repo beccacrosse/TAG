@@ -58,7 +58,10 @@ const YourResponse = ({ onSubmit }) => {
             multiline
           />
         </View>
+
+
         <View style={styles.footer}>  
+          
           <View style={{ flexDirection: 'row' }}>
             <Pressable onPress={pickImage}>
               <FontAwesome name="microphone" size={24} color="black" />
@@ -107,7 +110,7 @@ const styles = StyleSheet.create({
     width: "100%", // Ensure the container takes up the full width
   },
   input: {
-    ...fonts.question,
+    ...fonts.promptResponse,
     borderWidth: 1,
     padding: 10,
     marginBottom: 10, // Adjust as needed

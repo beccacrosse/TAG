@@ -3,9 +3,9 @@ import { View, ScrollView, Text, StyleSheet, FlatList } from 'react-native';
 import Images from '../../assets/images/images';
 import TopBar from '../../components/TopBar';
 import PromptBox from '../../components/homepage/PromptBox';
-import ResponseBox from '../../components/homepage/ResponseBox';
 import YourResponse from '../../components/homepage/YourResponse';
 import Response from '../../components/homepage/promptResponse';
+import Colors from '../../branding/Colors';
 
 function HomeScreen({ route }) {
   const data = [
@@ -36,18 +36,10 @@ function HomeScreen({ route }) {
       <TopBar />
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent}>
         <PromptBox text="This is an example prompt. How do you feel today?" />
-        {/* <YourResponse onSubmit={handleResponseSubmit} /> */}
         {!respondedToday && <YourResponse onSubmit={handleResponseSubmit} />}
-        {/* {respondedToday ? (
-          responses.map((response, index) => (
-            <ResponseBox key={index} text={response.text} userName={response.userName} profilePic={response.profilePic} />
-          ))
-        ) : (
-          <YourResponse onSubmit={handleResponseSubmit} />
-        )} */}
         <View style={styles.responsesContainer}>
           <FlatList
-            data={data}
+            data={responses}
             keyExtractor={(item, index) => index.toString()}
             renderItem={({ item, index }) => (
               <Response
@@ -69,6 +61,7 @@ function HomeScreen({ route }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: Colors.violet,
   },
   scrollView: {
     flex: 1, // Ensures scrollView takes up the full space of its container
