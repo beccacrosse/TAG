@@ -41,6 +41,11 @@ const textStyle = StyleSheet.create({
   PoppinsBold: {
     fontFamily: "PoppinsBold",
   },
+  loginLogo: {
+    fontFamily: "PermanentMarker",
+    fontSize: 130,
+    color: Colors.white,
+  },
 });
 
 export default textStyle;
