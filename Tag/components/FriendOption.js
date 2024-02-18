@@ -2,7 +2,7 @@ import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import Fonts from '../branding/Fonts';
 
-const GroupOption = ({ name, onSelect }) => {
+const FriendOption = ({ name, onSelect }) => {
   return (
     <TouchableOpacity onPress={() => onSelect(name)} style={styles.container}>
       <Text style={styles.text}>{name}</Text>
@@ -26,4 +26,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default GroupOption;
+export default FriendOption;
