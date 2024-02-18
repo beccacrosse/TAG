@@ -27,7 +27,7 @@ const textStyle = StyleSheet.create({
     fontFamily: "Cutive",
     fontSize: 10,
     color: Colors.black
-  }
+  },
 });
 
 export default textStyle;

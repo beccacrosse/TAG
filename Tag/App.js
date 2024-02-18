@@ -9,6 +9,7 @@ const fetchFonts = () => {
   return Font.loadAsync({
     Cutive: require("./assets/fonts/Cutive/Cutive-Regular.ttf"),
     CutiveMono: require("./assets/fonts/Cutive_Mono/CutiveMono-Regular.ttf"),
+    PermanentMarker: require("./assets/fonts/Permanent_Marker/PermanentMarker-Regular.ttf"),
   });
 };
 
@@ -29,10 +30,9 @@ const App = () => {
         <NavigationContainer>
           <AppNavigator />
         </NavigationContainer>
-        </SignupProvider>
+      </SignupProvider>
     );
   }
 };
 
 export default App;
-
