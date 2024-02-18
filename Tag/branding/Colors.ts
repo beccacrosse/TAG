@@ -6,6 +6,7 @@ export default {
   rooted: "#2E4C17", // dark forest green
   rootedLight: "#80A55B", // light forest green
   lazy: "#FB712C", // deep orange
+  crimson: "#B02424",
   vetiver: "#FAEAD7", // cream
   poet: "#C34725", // brick red
   mustard: "#E7CB5D", // lighter yellow

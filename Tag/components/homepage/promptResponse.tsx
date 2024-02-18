@@ -14,6 +14,7 @@ interface responseProps {
   avi?: any;
   name?: string;
   timestamp?: string;
+  photo?: any;
   text?: string;
 }
 
@@ -21,6 +22,7 @@ const Response: React.FC<responseProps> = (props: responseProps) => {
   let name = props.name;
   let time = props.timestamp;
   let text = props.text;
+  let photo = props.photo;
   let avi = props.avi;
 
   const [isPressed, setIsPressed] = useState(false);
@@ -39,6 +41,7 @@ const Response: React.FC<responseProps> = (props: responseProps) => {
       </View>
 
       <View style={styles.body}>
+        
       <Text style={styles.responseFont}> {text}</Text>
       </View>
       <View>
