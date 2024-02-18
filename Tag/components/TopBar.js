@@ -81,7 +81,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   buttonText: {
-    ...fonts.header,
+    ...fonts.loginLogo,
+    fontSize: 32,
     alignContent: "center",
   },
   button: {
