@@ -4,13 +4,14 @@ import Colors from "../../branding/Colors";
 import QuestionBox from "../../components/signup/questionBox";
 import FloatingBackButton from "../../components/backButton";
 import ImageButton from "../../components/photoButton";
+import NextButton from "../../components/nextButton";
 
 const ProfilePic3 = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <FloatingBackButton navigation={navigation} />
-      <QuestionBox question="Add a profile picture!" />
       <ImageButton />
+      <NextButton onPress={() => navigation.navigate("Phone6")} />
     </View>
   );
 };
@@ -21,13 +22,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: Colors.lazy,
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: "gray",
-    width: "80%",
-    padding: 10,
-    marginBottom: 20,
   },
 });
 

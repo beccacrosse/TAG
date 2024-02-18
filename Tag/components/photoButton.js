@@ -4,6 +4,7 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import Colors from "../branding/Colors";
 import { Platform } from "react-native";
 import Fonts from "../branding/Fonts";
+import QuestionBox from "./signup/questionBox";
 
 const ImageButton = () => {
   const [image, setImage] = useState(null);
@@ -57,6 +58,7 @@ const ImageButton = () => {
 
   return (
     <View style={styles.container}>
+      <QuestionBox text="Add a profile picture!" />
       <TouchableOpacity onPress={pickImage} style={styles.uploadButton}>
         <Text style={styles.uploadButtonText}>Upload from camera roll</Text>
       </TouchableOpacity>
@@ -78,6 +80,7 @@ const styles = {
   uploadButton: {
     backgroundColor: Colors.mustard,
     borderRadius: 20,
+    borderColor: Colors.mustard,
     padding: 20,
     marginVertical: 10,
     width: "70%",
@@ -90,10 +93,11 @@ const styles = {
   photoButton: {
     borderWidth: 1,
     backgroundColor: Colors.mustard,
-    borderColor: Colors.white,
     borderRadius: 20,
     padding: 20,
     marginVertical: 10,
+    borderColor: Colors.mustard,
+
     width: "70%",
     paddingVertical: 10,
   },
