@@ -4,7 +4,7 @@ import { FlatList, Text, TouchableOpacity } from "react-native";
 import Colors from "../../branding/Colors";
 import fonts from "../../branding/Fonts";
 import NextButton from "../../components/nextButton";
-
+import { useSignup } from "../../SignupContext";
 interface birthdayAnswerProps {
   text?: string;
   height?: number;
@@ -90,10 +90,17 @@ const BirthdayPicker: React.FC<birthdayAnswerProps> = (
   props: birthdayAnswerProps
 ) => {
   let navigation = props.navigation;
+  const { saveSignupData } = useSignup(); 
   const [selectedYear, setSelectedYear] = useState("2000");
   const [selectedMonth, setSelectedMonth] = useState("July");
   const [selectedDay, setSelectedDay] = useState("15");
 
+  const handleSaveAndNavigate = () => {
+    const birthday = `${selectedYear}-${selectedMonth}-${selectedDay}`;
+    saveSignupData('birthday', birthday); // Save the formatted birthday string
+    navigation.navigate("ProfilePic3"); // Navigate to the next screen
+  };
+  
   const currentYear = new Date().getFullYear();
   const years = Array.from({ length: currentYear - 1900 + 1 }, (_, i) =>
     (currentYear - i).toString()
@@ -158,3 +165,4 @@ const pickerStyles = StyleSheet.create({
 });
 
 export default BirthdayPicker;
+

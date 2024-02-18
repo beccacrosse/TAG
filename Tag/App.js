@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
 import AppNavigator from "./navigation/AppNavigator";
-import AppLoading from "expo-app-loading"; // Corrected import
+import AppLoading from "expo-app-loading";
 import * as Font from "expo-font";
+import { SignupProvider } from "./SignupContext";
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -26,11 +25,14 @@ const App = () => {
     );
   } else {
     return (
-      <NavigationContainer>
-        <AppNavigator />
-      </NavigationContainer>
+      <SignupProvider>
+        <NavigationContainer>
+          <AppNavigator />
+        </NavigationContainer>
+        </SignupProvider>
     );
   }
 };
 
 export default App;
+
