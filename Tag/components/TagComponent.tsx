@@ -4,8 +4,20 @@ import { View, Text, Image, Pressable, StyleSheet } from "react-native";
 import Colors from "../branding/Colors";
 import fonts from "../branding/Fonts";
 import { AntDesign } from "@expo/vector-icons";
+const getImageSource = (imgSrc) => {
+  if (typeof imgSrc === "string" && imgSrc.startsWith("http")) {
+    return { uri: imgSrc };
+  } else {
+    return imgSrc;
+  }
+};
 
-const TagComponent = ({ question, numberOfAnswers, images }) => {
+const TagComponent = ({
+  question,
+  numberOfAnswers,
+  totalAnswers = 4,
+  images,
+}) => {
   const [isPressed, setIsPressed] = useState(false);
   const handlePress = () => {
     setIsPressed(!isPressed);
@@ -20,10 +32,16 @@ const TagComponent = ({ question, numberOfAnswers, images }) => {
       </Pressable>
       <Text style={styles.question}>{question}</Text>
       <View style={styles.footer}>
-        <Text style={styles.answerCount}>{numberOfAnswers}</Text>
+        <Text style={styles.answerCount}>
+          {numberOfAnswers}/{totalAnswers}
+        </Text>
         <View style={styles.imageContainer}>
           {images.map((imgSrc, index) => (
-            <Image key={index} source={imgSrc} style={styles.image} />
+            <Image
+              key={index}
+              source={getImageSource(imgSrc)}
+              style={styles.image}
+            />
           ))}
         </View>
       </View>
@@ -39,13 +57,13 @@ const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: "#FFFFFF",
-    borderRadius: 8,
+    borderRadius: 20,
     padding: 15,
     alignContent: "center",
     alignItems: "center",
     margin: 8,
     flex: 1,
-    minHeight: 150,
+    height: 160,
     justifyContent: "space-between",
     textAlign: "center",
   },
@@ -61,11 +79,13 @@ const styles = StyleSheet.create({
   footer: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
+    marginHorizontal: "30%",
   },
   answerCount: {
-    fontSize: 14,
-    color: Colors.black,
+    fontFamily: fonts.answer.fontFamily,
+    fontSize: 10,
+    marginTop: 10,
+    color: "red",
   },
   imageContainer: {
     flexDirection: "row",

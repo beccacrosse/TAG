@@ -38,7 +38,7 @@ const textStyle = StyleSheet.create({
     fontSize: 28,
     color: Colors.white,
   },
-  poppinsBold: {
+  PoppinsBold: {
     fontFamily: "PoppinsBold",
   },
 });
