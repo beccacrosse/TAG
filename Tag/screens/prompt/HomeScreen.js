@@ -15,9 +15,9 @@ import YourResponse from "../../components/homepage/YourResponse";
 import Response from "../../components/homepage/promptResponse";
 import Colors from "../../branding/Colors";
 import ResponseReminder from "../../components/homepage/ResponseReminder";
-import { getUserProfilePic } from "../../DatabaseManager";
 
 function HomeScreen({ route }) {
+  const [responseImage, setResponseImage] = useState(null);
   const [myResponse, setMyResponse] = useState(null); // Track if user's response has been submitted
 
   const prompt1 = "What lesson took you the longest to unlearn?";
@@ -127,7 +127,6 @@ function HomeScreen({ route }) {
       text={item.text}
     />
   );
-  const [profilePic, setProfilePic] = useState(null);
 
   const { selectedGroupName } = route.params || {};
   const [currentPrompt, setCurrentPrompt] = useState(prompt1);
@@ -137,16 +136,18 @@ function HomeScreen({ route }) {
   const myPfp = Images.lucy;
   const myTimestamp = "1 min ago";
 
-  const handleResponseSubmit = (responseText) => {
+  const handleResponseSubmit = (responseText, imageUri) => {
     setResponses((currentResponses) => [
       ...currentResponses,
       {
         text: responseText,
+        image: imageUri,
         userName: myName,
-        avi: profilePic,
+        avi: myPfp,
         timestamp: myTimestamp,
       },
     ]);
+    setResponseImage(imageUri);
     setMyResponse(responseText);
   };
   useEffect(() => {
@@ -168,19 +169,6 @@ function HomeScreen({ route }) {
         setResponses(data1);
     }
   }, [selectedGroupName]);
-
-  useEffect(() => {
-    const fetchProfilePicture = async () => {
-      try {
-        const userId = "1";
-        const pic = await getUserProfilePic(userId);
-        setProfilePic(pic);
-      } catch (error) {
-        console.error("Error fetching profile picture:", error);
-      }
-    };
-    fetchProfilePicture();
-  }, []);
 
   return (
     <View style={styles.container}>
