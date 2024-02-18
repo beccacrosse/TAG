@@ -1,6 +1,7 @@
-import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
-import Fonts from '../branding/Fonts';
+import React from "react";
+import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import Fonts from "../branding/Fonts";
+import Colors from "../branding/Colors";
 
 const GroupOption = ({ name, onSelect }) => {
   return (
@@ -12,16 +13,23 @@ const GroupOption = ({ name, onSelect }) => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
+    padding: 20,
     marginVertical: 5,
-    //backgroundColor: '#E0E0E0',
     borderRadius: 5,
+    borderColor: Colors.white,
+    borderWidth: 1,
+    alignItems: "center",
+    borderRadius: 20,
+    width: "70%",
+    justifyContent: "center",
+    alignContent: "center",
+    alignSelf: "center",
   },
   text: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontFamily: "Cutive",
-    color:'white',
+    color: Colors.white,
     lineHeight: 20,
   },
 });

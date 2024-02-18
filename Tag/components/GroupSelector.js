@@ -16,9 +16,9 @@ const GroupSelector = () => {
 
   return (
     <View style={[styles.container, styles.selectedText]}>
-      <GroupOption name="1. Backend Baddies" onSelect={handleSelectGroup} />
-      <GroupOption name="2. Family" onSelect={handleSelectGroup} />
-      <GroupOption name="3. Home Friends" onSelect={handleSelectGroup} />
+      <GroupOption name="Backend Baddies" onSelect={handleSelectGroup} />
+      <GroupOption name="Family" onSelect={handleSelectGroup} />
+      <GroupOption name="Home Friends" onSelect={handleSelectGroup} />
     </View>
   );
 };
@@ -27,6 +27,13 @@ const GroupSelector = () => {
 //<Text style={styles.selectedText}>Selected Group: {selectedGroup}</Text>
 
 const styles = StyleSheet.create({
+  button: {
+    backgroundColor: "#007bff", // Bootstrap primary button color
+    padding: 10,
+    margin: 5,
+    borderRadius: 5,
+    alignItems: "center",
+  },
   container: {
     padding: 20,
   },
