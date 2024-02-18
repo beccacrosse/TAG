@@ -3,18 +3,16 @@ import { Dimensions, StyleSheet , View, Text} from "react-native";
 import fonts from "../../branding/Fonts";
 import Colors from "../../branding/Colors";
 
-interface promptBoxProps {
-  text?: string;
-}
-
-const PromptBox: React.FC<promptBoxProps> = (props: promptBoxProps) => {
-  let prompt = props.text;
+const PromptBox = (props) => {
+  const prompt = props.text;
 
   return (
-    <View style={styles.card}>
-      <Text style={styles.prompt}> {prompt}</Text>
+    <View style={styles.container}>
+      <View style={styles.card}>
+        <Text style={styles.prompt}> {prompt}</Text>
+      </View>
     </View>
-  );
+  )
 };
 
 const styles = StyleSheet.create({
@@ -25,15 +23,12 @@ const styles = StyleSheet.create({
     height: 196,
     width: 326,
     borderRadius: 20,
-    shadowOpacity: 0,
-    shadowRadius: 0
   },
   container: {
     backgroundColor: Colors.white,
     paddingVertical: 30,
     paddingHorizontal: 12,
-    marginLeft: 20,
-    justifyContent: "center",
+    justifyContent: "center", 
 
   },
   surround: {

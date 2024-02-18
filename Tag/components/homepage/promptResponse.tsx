@@ -59,6 +59,7 @@ const Response: React.FC<responseProps> = (props: responseProps) => {
 
 const styles = StyleSheet.create({
   card: {
+    marginVertical: "5%",
     paddingVertical: "8%",
     paddingHorizontal: "8%",
     backgroundColor: Colors.white,

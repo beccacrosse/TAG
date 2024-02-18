@@ -5,28 +5,46 @@ const YourResponse = ({ onSubmit }) => {
   const [responseText, setResponseText] = useState('');
 
   return (
-    <View style={styles.container}>
-      <TextInput
-        style={styles.input}
-        placeholder="Your response..."
-        value={responseText}
-        onChangeText={setResponseText}
-        multiline
-      />
-      <Button
-        title="Submit"
-        onPress={() => {
-          onSubmit(responseText); 
-          setResponseText(''); 
-        }}
-      />
-    </View>
+      <View style={styles.card}>
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={styles.input}
+            placeholder="Your response..."
+            value={responseText}
+            onChangeText={setResponseText}
+            multiline
+          />
+          <Button
+            title="Submit"
+            onPress={() => {
+              onSubmit(responseText); 
+              setResponseText(''); 
+            }}
+          />
+        </View>
+      </View>
+
+  
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 20,
+  card: {
+    alignContent: "center",
+    justifyContent: "center",
+    marginVertical: "5%",
+    paddingVertical: "8%",
+    paddingHorizontal: "8%",
+    backgroundColor: "white",
+    height: 420,
+    width: 326,
+    borderRadius: 20,
+    shadowOpacity: 0,
+    shadowRadius: 0
+  },
+  inputContainer : {
+    
+    padding:0
   },
   input: {
     borderWidth: 1,
