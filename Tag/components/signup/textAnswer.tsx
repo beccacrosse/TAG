@@ -1,28 +1,23 @@
 import React, { useState } from "react";
-import { View, StyleSheet, TextInput } from "react-native";
-import { KeyboardType } from "react-native";
+import { View, TextInput, StyleSheet } from "react-native";
+import NextButton from "../../components/nextButton";
 import fonts from "../../branding/Fonts";
 import Colors from "../../branding/Colors";
-import NextButton from "../../components/nextButton";
 
-interface textBoxAnswerProps {
-  text?: string;
-  navigation?: any;
-}
-
-const TextInputBox: React.FC<textBoxAnswerProps> = (
-  props: textBoxAnswerProps
-) => {
+const TextInputBox = ({ onNameSubmit }) => {
   const [text, setText] = useState("");
-  let navigation = props.navigation;
 
   return (
     <View style={styles.container}>
-      <TextInput style={styles.input} onChangeText={setText} maxLength={20} />
-
+      <TextInput
+        style={styles.input}
+        onChangeText={setText}
+        value={text}
+        maxLength={20}
+      />
       {text.length > 0 && (
         <View style={styles.buttonContainer}>
-          <NextButton onPress={() => navigation.navigate("Birthday2")} />
+          <NextButton onPress={() => onNameSubmit(text)} />
         </View>
       )}
     </View>
@@ -39,7 +34,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   buttonContainer: {
-    marginTop: 10, // Add some spacing above the button
+    marginTop: 10,
   },
 });
 

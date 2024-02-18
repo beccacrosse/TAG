@@ -23,6 +23,7 @@ const ImageButton = () => {
       setImage(result.assets[0].uri);
     }
   };
+
   const takePhoto = async () => {
     let result = await ImagePicker.launchCameraAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
@@ -37,6 +38,7 @@ const ImageButton = () => {
       setImage(result.assets[0].uri);
     }
   };
+
   useEffect(() => {
     (async () => {
       if (Platform.OS !== "web") {
@@ -62,42 +64,49 @@ const ImageButton = () => {
       <TouchableOpacity onPress={takePhoto} style={styles.photoButton}>
         <Text style={styles.photoButtonText}>Take a photo</Text>
       </TouchableOpacity>
-      {image && <Image source={{ uri: image }} style={styles.imagePreview} />}
     </View>
   );
 };
+
 const styles = {
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: Colors.lazy,
   },
   uploadButton: {
+    backgroundColor: Colors.mustard,
     borderRadius: 20,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
+    padding: 20,
     marginVertical: 10,
-    backgroundColor: Colors.violet,
+    width: "70%",
   },
   uploadButtonText: {
-    ...Fonts.answer,
+    ...Fonts.question, // Assuming you have this style defined in Fonts
+    color: Colors.white,
     textAlign: "center",
-    fontWeight: "bold",
   },
   photoButton: {
     borderWidth: 1,
+    backgroundColor: Colors.mustard,
     borderColor: Colors.white,
     borderRadius: 20,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
+    padding: 20,
     marginVertical: 10,
-
-    backgroundColor: Colors.violet,
+    width: "70%",
+    paddingVertical: 10,
   },
   photoButtonText: {
-    ...Fonts.answer,
+    ...Fonts.question, // Assuming you have this style defined in Fonts
+    color: Colors.white,
     textAlign: "center",
-    fontWeight: "bold",
+  },
+  skipText: {
+    ...Fonts.skipText, // Assuming you have this style defined in Fonts
+    color: Colors.white,
+    marginTop: 20, // Adjust as needed
+    fontstyle: "underline",
   },
   imagePreview: {
     width: 200,
