@@ -3,14 +3,14 @@ import { View, TextInput, Button, StyleSheet } from "react-native";
 import Colors from "../../branding/Colors";
 import QuestionBox from "../../components/signup/questionBox";
 import FloatingBackButton from "../../components/backButton";
-import ImagePicker from "../../components/photoButton";
+import ImageButton from "../../components/photoButton";
 
 const ProfilePic3 = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <FloatingBackButton navigation={navigation} />
       <QuestionBox question="Add a profile picture!" />
-      <ImagePicker />
+      <ImageButton />
     </View>
   );
 };
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: Colors.violet,
+    backgroundColor: Colors.lazy,
   },
   input: {
     borderWidth: 1,
