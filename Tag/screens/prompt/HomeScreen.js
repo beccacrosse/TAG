@@ -8,15 +8,6 @@ import YourResponse from '../../components/homepage/YourResponse';
 import Response from '../../components/homepage/promptResponse';
 
 function HomeScreen({ route }) {
-  const { selectedGroupName } = route.params || {};
-  const [respondedToday, setRespondedToday] = useState(false);
-  const [responses, setResponses] = useState([]); // This will store the array of response texts
-
-  const handleResponseSubmit = (responseText) => {
-    setResponses(currentResponses => [...currentResponses, { text: responseText, userName: "You", profilePic: "https://example.com/your-profile-pic.jpg" }]);
-    setRespondedToday(true);
-  };
-
   const data = [
     { avi: Images.dia, name: "Example name 1", timestamp: "31", text: "Response text 1" },
     { avi: Images.dia, name: "Example name 2", timestamp: "32", text: "Response text 2" },
@@ -24,13 +15,29 @@ function HomeScreen({ route }) {
     { avi: Images.dia, name: "Example name 4", timestamp: "34", text: "Response text 4" },
     { avi: Images.dia, name: "Example name 5", timestamp: "35", text: "Response text 5" }
   ];
+  const { selectedGroupName } = route.params || {};
+  const [respondedToday, setRespondedToday] = useState(false);
+  const [responses, setResponses] = useState(data); // This will store the array of response texts
+
+  const myName = "Dia testing";
+  const myPfp = Images.dia;
+  const myTimestamp = "1 min ago";
+
+  const handleResponseSubmit = (responseText) => {
+    setResponses(currentResponses => [
+      ...currentResponses,
+      { text: responseText, userName: myName, avi: myPfp, timestamp: myTimestamp }
+    ]);
+    setRespondedToday(true);
+  };
 
   return (
     <View style={styles.container}>
       <TopBar />
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent}>
         <PromptBox text="This is an example prompt. How do you feel today?" />
-        <YourResponse onSubmit={handleResponseSubmit} />
+        {/* <YourResponse onSubmit={handleResponseSubmit} /> */}
+        {!respondedToday && <YourResponse onSubmit={handleResponseSubmit} />}
         {/* {respondedToday ? (
           responses.map((response, index) => (
             <ResponseBox key={index} text={response.text} userName={response.userName} profilePic={response.profilePic} />

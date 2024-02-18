@@ -16,27 +16,22 @@ const PromptBox = (props) => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center", // Center content horizontally
+  },
   card: {
-    paddingVertical: "10%",
-    paddingHorizontal: "5%",
-    backgroundColor: Colors.white,
+    justifyContent: "center",
+    alignItems: "center", // Center content horizontally and vertically
+    marginVertical: "5%",
+    paddingVertical: "8%",
+    paddingHorizontal: "8%",
+    backgroundColor: "white",
     height: 196,
     width: 326,
     borderRadius: 20,
-  },
-  container: {
-    backgroundColor: Colors.white,
-    paddingVertical: 30,
-    paddingHorizontal: 12,
-    justifyContent: "center", 
-
-  },
-  surround: {
-    flexDirection: "column",
-    justifyContent: "center",
-    alignContent: "flex-end",
-    alignItems: "flex-end",
-    paddingVertical: 20,
+    shadowOpacity: 0,
+    shadowRadius: 0
   },
   prompt: {
     ...fonts.prompt,
