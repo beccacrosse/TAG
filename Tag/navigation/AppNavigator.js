@@ -9,6 +9,7 @@ import SignupScreen6 from '../screens/signup/SignupScreen6';
 import JoinorCreateScreen from '../screens/groups/JoinorCreateScreen';
 import JoinGroupScreen from '../screens/groups/JoinGroupScreen';
 import CreateGroupScreen from '../screens/groups/CreateGroupScreen';
+import HomeScreen from '../screens/prompt/HomeScreen'
 
 
 const Stack = createNativeStackNavigator();
@@ -25,6 +26,7 @@ function AppNavigator() {
       <Stack.Screen name="JoinorCreate" component={JoinorCreateScreen} />
       <Stack.Screen name="JoinGroup" component={JoinGroupScreen} />
       <Stack.Screen name="CreateGroup" component={CreateGroupScreen} />
+      <Stack.Screen name="Home" component={HomeScreen} />
       {/* other screens */}
     </Stack.Navigator>
   );

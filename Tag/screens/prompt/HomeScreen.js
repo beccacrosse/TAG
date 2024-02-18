@@ -2,12 +2,12 @@ import React from 'react';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import TopBar from '../../components/TopBar'; // Adjust the path as necessary
 
-function ProfileScreen() {
+function HomeScreen() {
   return (
     <View style={styles.container}>
       <TopBar />
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
-        <Text>Calendar Component here tbh</Text>
+        <Text>Home Screen</Text>
         {/* Load in responses here. For example, this could be a list of items */}
       </ScrollView>
     </View>
@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProfileScreen;
+export default HomeScreen;
