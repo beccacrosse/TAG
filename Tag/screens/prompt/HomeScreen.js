@@ -15,11 +15,26 @@ import YourResponse from "../../components/homepage/YourResponse";
 import Response from "../../components/homepage/promptResponse";
 import Colors from "../../branding/Colors";
 import ResponseReminder from "../../components/homepage/ResponseReminder";
+import { getUserProfilePic } from "../../DatabaseManager";
 
 function HomeScreen({ route }) {
   const [responseImage, setResponseImage] = useState(null);
   const [myResponse, setMyResponse] = useState(null); // Track if user's response has been submitted
+  const [profilePic, setProfilePic] = useState(null);
+  useEffect(() => {
+    const fetchProfilePicture = async () => {
+      try {
+        const userId = "1";
+        const pic = await getUserProfilePic(userId);
+        setProfilePic(pic);
+        console.log("setProfilePic");
+      } catch (error) {
+        console.error("Error fetching profile picture:", error);
+      }
+    };
 
+    fetchProfilePicture();
+  }, []);
   const prompt1 = "What lesson took you the longest to unlearn?";
   const data1 = [
     {
@@ -143,7 +158,7 @@ function HomeScreen({ route }) {
         text: responseText,
         image: imageUri,
         userName: myName,
-        avi: myPfp,
+        avi: { uri: profilePic },
         timestamp: myTimestamp,
       },
     ]);
