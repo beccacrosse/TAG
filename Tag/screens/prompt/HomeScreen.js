@@ -224,7 +224,8 @@ function HomeScreen({ route }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.violet,
+    paddingTop: 20,
+    backgroundColor: Colors.crimson,
   },
   scrollView: {
     flex: 1,

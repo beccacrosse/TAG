@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 34,
     fontFamily: "Cutive",
-    lineHeight: 40,
+    lineHeight: 42,
     color: "white",
   },
 });

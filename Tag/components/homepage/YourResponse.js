@@ -80,7 +80,7 @@ const YourResponse = ({ onSubmit }) => {
         <View style={styles.footer}>
           <View style={{ flexDirection: "row" }}>
             <Pressable
-              style={{ paddingRight: 5 }}
+              style={{ paddingRight: 10 }}
               onPress={() => navigation.navigate("Missing")}
             >
               <FontAwesome name="microphone" size={24} color="black" />
