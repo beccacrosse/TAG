@@ -4,6 +4,7 @@ export default {
   charisma: "#E1F096", // light lime green
   violet: "#ABC3FF", // light violet
   rooted: "#2E4C17", // dark forest green
+  rootedLight: "#80A55B", // light forest green
   lazy: "#FB712C", // deep orange
   vetiver: "#FAEAD7", // cream
   poet: "#C34725", // brick red

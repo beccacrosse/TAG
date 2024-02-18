@@ -8,7 +8,7 @@ const textStyle = StyleSheet.create({
     lineHeight: 40,
   },
   answer: {
-    fontFamily: "Cutivemono",
+    fontFamily: "CutiveMono",
     fontSize: 44,
     color: Colors.white,
   },

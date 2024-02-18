@@ -1,12 +1,16 @@
-// screens/SignupScreen1.js
 import React from "react";
-import { View, TextInput, Button, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
+import QuestionBox from "../../components/signup/questionBox";
+import BirthdayAnswer from "../../components/signup/birthdayAnswer";
+import Colors from "../../branding/Colors";
+import FloatingBackButton from "../../components/backButton";
 
 const Birthday2 = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <TextInput placeholder="phone number" style={styles.input} />
-      <Button title="Next >" onPress={() => navigation.navigate("Signup3")} />
+      <FloatingBackButton navigation={navigation} />
+      <QuestionBox text="What is your birthday?" />
+      <BirthdayAnswer navigation={navigation} />
     </View>
   );
 };
@@ -16,6 +20,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: Colors.sherbert,
   },
   input: {
     borderWidth: 1,
