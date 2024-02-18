@@ -6,13 +6,15 @@ import {
   StyleSheet,
   FlatList,
   Image,
+  TouchableOpacity,
 } from "react-native";
 import FloatingBackButton from "../../components/backButton";
-import TagComponent from "../../components/TagComponent";
 import UserProfilePic from "../../assets/images/userprofilepic.jpg";
 import Colors from "../../branding/Colors";
 import Fonts from "../../branding/Fonts";
-import data from "../../promptData";
+import GallerySection from "../../components/ScrapComponent";
+import photos from "../../scrapPhotos";
+import videos from "../../scrapVideos";
 
 function TagsScreen({ navigation }) {
   return (
@@ -23,17 +25,18 @@ function TagsScreen({ navigation }) {
           <Image source={UserProfilePic} style={styles.profilePic} />
           <Text style={styles.title}>Hots 🍑🐜</Text>
           <View style={styles.tabContainer}>
-            <Text style={styles.tabActive}>Tags (231)</Text>
-            <Text style={styles.tab}>Scraps (347)</Text>
+            <TouchableOpacity onPress={() => navigation.navigate("TagsScreen")}>
+              <Text style={styles.tab}>Tags (231)</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("ScrapsScreen")}
+            >
+              <Text style={styles.tabActive}>Scraps (347)</Text>
+            </TouchableOpacity>
           </View>
         </View>
-        <FlatList
-          data={data}
-          renderItem={({ item }) => <TagComponent {...item} />}
-          keyExtractor={(item) => item.id}
-          numColumns={3}
-          columnWrapperStyle={styles.row}
-        />
+        <GallerySection title="Photos >" count="247" data={photos} />
+        <GallerySection title="Videos >" count="100" data={videos} />
       </ScrollView>
     </View>
   );

@@ -4,13 +4,6 @@ import { View, Text, Image, Pressable, StyleSheet } from "react-native";
 import Colors from "../branding/Colors";
 import fonts from "../branding/Fonts";
 import { AntDesign } from "@expo/vector-icons";
-const getImageSource = (imgSrc) => {
-  if (typeof imgSrc === "string" && imgSrc.startsWith("http")) {
-    return { uri: imgSrc };
-  } else {
-    return imgSrc;
-  }
-};
 
 const TagComponent = ({
   question,
@@ -36,13 +29,11 @@ const TagComponent = ({
           {numberOfAnswers}/{totalAnswers}
         </Text>
         <View style={styles.imageContainer}>
-          {images.map((imgSrc, index) => (
-            <Image
-              key={index}
-              source={getImageSource(imgSrc)}
-              style={styles.image}
-            />
-          ))}
+          {images.map((imagePath, index) => {
+            return (
+              <Image key={index} source={imagePath} style={styles.image} />
+            );
+          })}
         </View>
       </View>
     </View>
@@ -76,16 +67,22 @@ const styles = StyleSheet.create({
     textAlign: "center",
     lineHeight: 15,
   },
-  footer: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginHorizontal: "30%",
-  },
   answerCount: {
     fontFamily: fonts.answer.fontFamily,
     fontSize: 10,
-    marginTop: 10,
+    marginTop: 5,
     color: "red",
+    marginLeft: 10,
+  },
+
+  footer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between", // Align items to each end
+    position: "absolute", // Position the footer absolutely
+    bottom: 5, // Position from the bottom
+    left: 10, // Position from the left
+    right: 10, // Position from the right
   },
   imageContainer: {
     flexDirection: "row",
@@ -94,7 +91,11 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24,
     borderRadius: 12,
-    marginLeft: -5,
+    marginLeft: -10, // Adjust for overlapping if desired
+  },
+  moreText: {
+    color: Colors.white,
+    fontWeight: "bold",
   },
 });
 
