@@ -1,6 +1,5 @@
 import React from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
-
 function LoginScreen({ navigation }) {
   return (
     <View style={styles.container}>

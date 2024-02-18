@@ -1,14 +1,14 @@
 import React from "react";
 import { View, TextInput, Button, StyleSheet } from "react-native";
+import QuestionBox from "../../components/signup/questionBox";
+import PhoneAnswer from "../../components/signup/phoneAnswer";
+import Colors from "../../branding/Colors";
 
 const Phone6 = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <TextInput placeholder="Enter query here" style={styles.input} />
-      <Button
-        title="Next >"
-        onPress={() => navigation.navigate("JoinorCreate")}
-      />
+      <QuestionBox text="What is your phone number?" />
+      <PhoneAnswer navigation={navigation} />
     </View>
   );
 };
@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
+    backgroundColor: Colors.violet,
     alignItems: "center",
   },
   input: {
