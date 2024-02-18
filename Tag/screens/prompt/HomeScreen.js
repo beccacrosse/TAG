@@ -143,7 +143,7 @@ function HomeScreen({ route }) {
       {
         text: responseText,
         userName: myName,
-        avi: myPfp,
+        avi: profilePic,
         timestamp: myTimestamp,
       },
     ]);

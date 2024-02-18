@@ -1,12 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { View, TextInput, Pressable, StyleSheet, Text, Image } from 'react-native';
+import React, { useState, useEffect } from "react";
+import {
+  View,
+  TextInput,
+  Pressable,
+  StyleSheet,
+  Text,
+  Image,
+} from "react-native";
+import { useNavigation } from "@react-navigation/native"; // Ensure you're using React Navigation v5 or later
+
 import fonts from "../../branding/Fonts";
-import { FontAwesome } from '@expo/vector-icons';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import * as ImagePicker from 'expo-image-picker';
+import { FontAwesome } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import * as ImagePicker from "expo-image-picker";
 
 const YourResponse = ({ onSubmit }) => {
-  const [responseText, setResponseText] = useState('');
+  const navigation = useNavigation();
+
+  const [responseText, setResponseText] = useState("");
   const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
@@ -15,12 +26,16 @@ const YourResponse = ({ onSubmit }) => {
 
   const requestGalleryPermission = async () => {
     try {
-      const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-      if (status !== 'granted') {
-        Alert.alert('Permission Required', 'Please enable gallery access to select photos.');
+      const { status } =
+        await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (status !== "granted") {
+        Alert.alert(
+          "Permission Required",
+          "Please enable gallery access to select photos."
+        );
       }
     } catch (error) {
-      console.error('Error requesting gallery permission:', error);
+      console.error("Error requesting gallery permission:", error);
     }
   };
 
@@ -32,26 +47,29 @@ const YourResponse = ({ onSubmit }) => {
         aspect: [4, 3],
         quality: 1,
       });
-  
+
       if (!result.cancelled) {
         setSelectedImage(result.uri);
       }
     } catch (error) {
-      console.error('Error picking image:', error);
+      console.error("Error picking image:", error);
     }
-  };  
+  };
 
   return (
     <View style={styles.container}>
       <View style={styles.card}>
         {selectedImage && (
           <View style={styles.selectedImageContainer}>
-            <Image source={{ uri: selectedImage }} style={styles.selectedImage} />
+            <Image
+              source={{ uri: selectedImage }}
+              style={styles.selectedImage}
+            />
           </View>
         )}
         <View style={styles.inputContainer}>
           <TextInput
-            style={[styles.input, { borderColor: 'transparent' }]} // Remove black outline
+            style={[styles.input, { borderColor: "transparent" }]} // Remove black outline
             placeholder="Your response..."
             value={responseText}
             onChangeText={setResponseText}
@@ -59,11 +77,12 @@ const YourResponse = ({ onSubmit }) => {
           />
         </View>
 
-
-        <View style={styles.footer}>  
-          
-          <View style={{ flexDirection: 'row'}}>
-            <Pressable style={{ paddingRight: 5}} onPress={{}}>
+        <View style={styles.footer}>
+          <View style={{ flexDirection: "row" }}>
+            <Pressable
+              style={{ paddingRight: 5 }}
+              onPress={() => navigation.navigate("Missing")}
+            >
               <FontAwesome name="microphone" size={24} color="black" />
             </Pressable>
             <Pressable onPress={pickImage}>
@@ -71,11 +90,13 @@ const YourResponse = ({ onSubmit }) => {
             </Pressable>
           </View>
 
-          <Pressable onPress={() => {
-            onSubmit(responseText, selectedImage); // Pass selectedImage to the onSubmit function
-            setResponseText('');
-            setSelectedImage(null); // Clear selected image after submission
-          }}>
+          <Pressable
+            onPress={() => {
+              onSubmit(responseText, selectedImage); // Pass selectedImage to the onSubmit function
+              setResponseText("");
+              setSelectedImage(null); // Clear selected image after submission
+            }}
+          >
             <MaterialCommunityIcons name="send" size={24} color="black" />
           </Pressable>
         </View>
@@ -101,7 +122,7 @@ const styles = StyleSheet.create({
     width: 326,
     borderRadius: 20,
     shadowOpacity: 0,
-    shadowRadius: 0
+    shadowRadius: 0,
   },
   inputContainer: {
     width: "100%", // Ensure the container takes up the full width
@@ -116,20 +137,20 @@ const styles = StyleSheet.create({
   },
   footer: {
     width: "100%",
-    flexDirection: 'row',
-    justifyContent: 'space-between', // Space between children
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between", // Space between children
+    alignItems: "center",
     paddingHorizontal: 10,
     marginTop: 10,
   },
   selectedImageContainer: {
-    alignItems: 'center',
+    alignItems: "center",
     marginBottom: 10,
   },
   selectedImage: {
     width: 200,
     height: 200,
-    resizeMode: 'cover',
+    resizeMode: "cover",
     borderRadius: 10,
   },
   submitButton: {
