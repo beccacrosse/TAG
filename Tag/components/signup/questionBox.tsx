@@ -1,48 +1,23 @@
 import React, { useState } from "react";
-import { View, StyleSheet, FlexAlignType } from "react-native";
-import Colors from "../branding/Colors/Colors.ts";
+import { View, StyleSheet, FlexAlignType, Text } from "react-native";
 import { KeyboardType } from "react-native";
+import fonts from "../../branding/Fonts";
+import Colors from "../../branding/Colors";
 
 interface questionBoxProps {
   alignment?: FlexAlignType;
   keyboardType?: KeyboardType;
-  onChange?: (text: string) => void;
-  placeholder?: string;
+  text?: string;
   height?: number;
   width?: number;
-  onConfirm?: (text: string) => void;
-  disabled?: boolean;
 }
 
 const QuestionBox: React.FC<questionBoxProps> = (props: questionBoxProps) => {
-  const [inputText, setInputText] = useState("");
-  let textBoxStyle = StyleSheet.compose(styles.container, {
-    alignItems: props.alignment,
-    height: props.height,
-    width: props.width,
-  });
+  let questionText = props.text;
 
   return (
     <View style={styles.surround}>
-      <View style={textBoxStyle}>
-        <View style={styles.inputBox}>
-          <questionBox
-            style={styles.input}
-            placeholder={props.placeholder}
-            value={inputText}
-            placeholderTextColor={Colors.darkGray}
-            keyboardType={props.keyboardType}
-            onChangeText={(text) => {
-              setInputText(text);
-              if (props.onChange) props.onChange(text);
-            }}
-            onSubmitEditing={() => {
-              if (props.onConfirm) props.onConfirm(inputText);
-            }}
-            clearButtonMode="never"
-          />
-        </View>
-      </View>
+      <Text style={styles.question} />
     </View>
   );
 };
@@ -64,20 +39,9 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     paddingVertical: 20,
   },
-  image: {
-    marginRight: 10,
-    maxHeight: 25,
-    maxWidth: 40,
-    aspectRatio: 1,
-  },
-  inputBox: {
-    flexDirection: "row",
-  },
-  input: {
-    color: Colors.black,
-    marginHorizontal: 10,
-    fontSize: 16,
-    width: "100%",
+  question: {
+    ...fonts.question,
+    textAlign: "center",
   },
 });
 
