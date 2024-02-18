@@ -51,7 +51,7 @@ const data = [
   },
   {
     id: "7",
-    question: "What do you need right now that you aren’t communicating ",
+    question: "What do you need right now that you aren’t communicating? ",
     numberOfAnswers: "3",
     images: [
       require("./assets/images/sam.png"),
