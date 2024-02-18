@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     width: "100%", // Ensure the container takes up the full width
   },
   input: {
-    ...fonts.promptResponse,
+    ...fonts.prompt,
     borderWidth: 1,
     padding: 10,
     marginBottom: 10, // Adjust as needed
