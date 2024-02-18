@@ -9,6 +9,6 @@ export default {
   poet: "#C34725", // brick red
   mustard: "#E7CB5D", // lighter yellow
   sherbert: "#F9935A", // lighter orange
-  bright: "#EE6157",  // lighter red
-  moss: "#5F8A3F" // lighter green
+  bright: "#EE6157", // lighter red
+  moss: "#5F8A3F", // lighter green
 };
