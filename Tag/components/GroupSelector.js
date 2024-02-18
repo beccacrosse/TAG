@@ -13,12 +13,16 @@ const GroupSelector = () => {
     setSelectedGroup(groupName);
     navigation.navigate("TagsScreen", { selectedGroupName: groupName });
   };
+  const missing = (groupName) => {
+    setSelectedGroup(groupName);
+    navigation.navigate("Missing", { selectedGroupName: groupName });
+  };
 
   return (
     <View style={[styles.container, styles.selectedText]}>
       <GroupOption name="1. Backend Baddies" onSelect={handleSelectGroup} />
-      <GroupOption name="2. Family" onSelect={handleSelectGroup} />
-      <GroupOption name="3. Home Friends" onSelect={handleSelectGroup} />
+      <GroupOption name="2. Family" onSelect={missing} />
+      <GroupOption name="3. Home Friends" onSelect={missing} />
     </View>
   );
 };

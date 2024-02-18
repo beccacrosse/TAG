@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import Colors from "../../branding/Colors";
+import Colors from "../branding/Colors";
 
 const InProgressScreen = () => {
   return (

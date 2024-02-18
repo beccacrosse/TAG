@@ -15,6 +15,7 @@ import ScrapsScreen from "../screens/profile/ScrapsScreen";
 import LoginScreen from "../screens/signup/LoginScreen0";
 import MyScrapsScreen from "../screens/myProfile/MyScrapsScreen";
 import MyTagsScreen from "../screens/myProfile/MyTagsScreen";
+import missing from "../screens/missing";
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +32,7 @@ function AppNavigator() {
         component={LoginScreen}
         options={{ title: "Login" }}
       />
+      <Stack.Screen name="Missing" component={missing} />
       <Stack.Screen name="Name1" component={Name1} />
       <Stack.Screen name="Birthday2" component={Birthday2} />
       <Stack.Screen name="ProfilePic3" component={ProfilePic3} />
