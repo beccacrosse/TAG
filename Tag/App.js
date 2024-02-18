@@ -9,7 +9,7 @@ const fetchFonts = () => {
   return Font.loadAsync({
     Cutive: require("./assets/fonts/Cutive/Cutive-Regular.ttf"),
     CutiveMono: require("./assets/fonts/Cutive_Mono/CutiveMono-Regular.ttf"),
-    PermanentMarker: require("./assets/fonts/Permanent_Marker/PermanentMarker-Regular.ttf"),
+    PermanentMarker: require("./assets/fonts/Permanent_Marker/LovelexieHandwritten.ttf"),
     Poppins: require("./assets/fonts/Poppins/Poppins-Regular.ttf"),
     PoppinsBold: require("./assets/fonts/Poppins/Poppins-Bold.ttf"),
     Marni: require("./assets/fonts/marny-font/MarnyRegular.otf"),
