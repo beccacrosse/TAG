@@ -18,7 +18,7 @@ import videos from "../../scrapVideos";
 import { useState, useEffect } from "react";
 import { getUserProfilePic } from "../../DatabaseManager";
 
-function TagsScreen({ navigation }) {
+function ScrapsScreen({ navigation }) {
   const [profilePic, setProfilePic] = useState(null);
 
   useEffect(() => {
@@ -117,4 +117,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TagsScreen;
+export default ScrapsScreen;
