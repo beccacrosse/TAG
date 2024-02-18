@@ -1,6 +1,22 @@
 import React from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
+import { saveUser, removeAllUsers } from "../../DatabaseManager";
+
 function LoginScreen({ navigation }) {
+  const createNewUser = async () => {
+    // New user data
+    const newUserData = {
+      name: "BLANK",
+      profilepic: "BLANK",
+      phone: "1",
+    };
+
+    // Save the new user to AsyncStorage
+    await saveUser(newUserData);
+
+    navigation.navigate("Name1");
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Do you already have an account?</Text>
@@ -12,10 +28,7 @@ function LoginScreen({ navigation }) {
 
       <Text style={styles.orText}>OR</Text>
 
-      <Button
-        title="Create New Account"
-        onPress={() => navigation.navigate("Name1")}
-      />
+      <Button title="Create New Account" onPress={() => createNewUser()} />
     </View>
   );
 }

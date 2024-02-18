@@ -1,0 +1,17 @@
+[
+  {
+    "name": "John Doe",
+    "profilepic": "avatar.jpg",
+    "phone": "123-456-7890"
+  },
+  {
+    "name": "Jane Smith",
+    "profilepic": "profile.jpg",
+    "phone": "987-654-3210"
+  },
+  {
+    "name": "Alice Johnson",
+    "profilepic": "alice.jpg",
+    "phone": "555-555-5555"
+  }
+]
