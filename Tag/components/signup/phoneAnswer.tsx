@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { View, StyleSheet, TextInput } from "react-native";
+import { db } from '../../firebase';
+import { collection, query, where, getDocs } from 'firebase/firestore';
 import { KeyboardType } from "react-native";
 import fonts from "../../branding/Fonts";
 import Colors from "../../branding/Colors";
@@ -38,6 +40,28 @@ const PhoneInput: React.FC<phoneAnswerProps> = (props: phoneAnswerProps) => {
   const handleChange = (text) => {
     const formattedText = formatPhoneNumber(text);
     setPhoneNumber(formattedText);
+  };
+
+  //check if the phone number is in the database -- from sign in step 
+  const checkPhoneNumberInDatabase = async () => {
+    const formattedNumber = phoneNumber.replace(/\s+/g, ''); // Remove spaces for the query
+
+    // Create a reference to the "users" collection
+    const usersRef = collection(db, 'users');
+
+    // Create a query against the collection to find documents where the phone field matches the formattedNumber
+    const q = query(usersRef, where('phone', '==', formattedNumber));
+
+    // Execute the query
+    const querySnapshot = await getDocs(q);
+
+    if (querySnapshot.empty) {
+      // Phone number not found, navigate to sign-up + say account not found, please create account
+      props.navigation.navigate("Name1", { phoneNumber: formattedNumber });
+    } else {
+      // Phone number found, proceed to homepage
+      props.navigation.navigate("JoinorCreateScreen", { phoneNumber: formattedNumber });
+    }
   };
 
   return (
