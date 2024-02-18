@@ -10,6 +10,8 @@ const fetchFonts = () => {
     Cutive: require("./assets/fonts/Cutive/Cutive-Regular.ttf"),
     CutiveMono: require("./assets/fonts/Cutive_Mono/CutiveMono-Regular.ttf"),
     PermanentMarker: require("./assets/fonts/Permanent_Marker/PermanentMarker-Regular.ttf"),
+    Poppins: require("./assets/fonts/Poppins/Poppins-Regular.ttf"),
+    PoppinsBold: require("./assets/fonts/Poppins/Poppins-Bold.ttf"),
   });
 };
 

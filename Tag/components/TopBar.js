@@ -43,7 +43,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     height: "auto",
     paddingHorizontal: 10,
-    backgroundColor: "#6200EE",
   },
   groupsButton: {
     width: 40,
@@ -63,7 +62,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   buttonText: {
-    fontSize: 16,
     ...fonts.header,
     alignContent: "center",
   },
@@ -76,8 +74,6 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 20,
     overflow: "hidden",
-    borderWidth: 1,
-    borderColor: "white",
     justifyContent: "center",
     alignItems: "center",
     marginLeft: 40,
