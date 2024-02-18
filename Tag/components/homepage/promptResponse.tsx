@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   responseFont: {
-    ...fonts.prompt,
+    ...fonts.promptResponse,
     textAlign: "center",
     marginHorizontal: 3
   },

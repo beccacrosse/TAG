@@ -12,6 +12,9 @@ const fetchFonts = () => {
     PermanentMarker: require("./assets/fonts/Permanent_Marker/PermanentMarker-Regular.ttf"),
     Poppins: require("./assets/fonts/Poppins/Poppins-Regular.ttf"),
     PoppinsBold: require("./assets/fonts/Poppins/Poppins-Bold.ttf"),
+    Marni: require("./assets/fonts/marny-font/MarnyRegular.otf"),
+    Messy: require("./assets/fonts/messy-child-font/MessyChild.ttf"),
+    Snake: require("./assets/fonts/snake-font/Snake-Bam.ttf"),
   });
 };
 

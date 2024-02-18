@@ -19,9 +19,11 @@ const textStyle = StyleSheet.create({
     lineHeight: 40,
   },
   promptResponse: {
-    fontFamily: "Cutivemono",
-    fontSize: 20,
+    fontFamily: "Snake",
+    fontSize: 30,
+    fontWeight: "bold",
     color: Colors.black,
+    lineHeight: 38,
   },
   responseHeader: {
     fontFamily: "Cutive",
