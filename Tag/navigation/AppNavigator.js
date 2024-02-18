@@ -11,13 +11,16 @@ import JoinGroupScreen from '../screens/groups/JoinGroupScreen';
 import CreateGroupScreen from '../screens/groups/CreateGroupScreen';
 import HomeScreen from '../screens/prompt/HomeScreen'
 import ProfileScreen from '../screens/profile/ProfileScreen'
+import LoginScreen from '../screens/signup/LoginScreen';
+import SignInScreen from '../screens/signup/SignInScreen';
 
 
 const Stack = createNativeStackNavigator();
 
 function AppNavigator() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName="LoginScreen">
+      <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ title: 'Login' }} />
       <Stack.Screen name="Signup1" component={SignupScreen1} />
       <Stack.Screen name="Signup2" component={SignupScreen2} />
       <Stack.Screen name="Signup3" component={SignupScreen3} />
@@ -29,6 +32,7 @@ function AppNavigator() {
       <Stack.Screen name="CreateGroup" component={CreateGroupScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
+      <Stack.Screen name="SignIn" component={SignInScreen} />
       {/* other screens */}
     </Stack.Navigator>
   );
