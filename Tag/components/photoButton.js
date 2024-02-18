@@ -11,7 +11,6 @@ const ImageButton = () => {
   const [image, setImage] = useState(null);
 
   const pickImage = async () => {
-    // No permissions request is necessary for launching the image library
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
@@ -38,9 +37,9 @@ const ImageButton = () => {
       updateUser(result.assets[0].uri); // Update user data
     }
   };
+
   const updateUser = async (imageuri) => {
     try {
-      // Retrieve the user's data from AsyncStorage
       const phone = "1"; // Or use appropriate user identifier
       const updatedElement = { profilepic: imageuri }; // New photo to update
       await updateUserElement(phone, updatedElement);
@@ -49,6 +48,7 @@ const ImageButton = () => {
       console.error("Error updating user element:", error);
     }
   };
+
   useEffect(() => {
     (async () => {
       if (Platform.OS !== "web") {
@@ -75,7 +75,15 @@ const ImageButton = () => {
       <TouchableOpacity onPress={takePhoto} style={styles.photoButton}>
         <Text style={styles.photoButtonText}>Take a photo</Text>
       </TouchableOpacity>
-      {image && <Image source={{ uri: image }} style={styles.imagePreview} />}
+
+      {/* View to maintain layout regardless of image presence */}
+      <View style={styles.imagePreviewContainer}>
+        {image ? (
+          <Image source={{ uri: image }} style={styles.imagePreview} />
+        ) : (
+          <View style={styles.placeholderPreview}></View> // Placeholder view if no image
+        )}
+      </View>
     </View>
   );
 };
@@ -108,7 +116,6 @@ const styles = {
     padding: 20,
     marginVertical: 10,
     borderColor: Colors.mustard,
-
     width: "70%",
     paddingVertical: 10,
   },
@@ -118,17 +125,24 @@ const styles = {
     color: Colors.white,
     textAlign: "center",
   },
-  skipText: {
-    ...Fonts.skipText, // Assuming you have this style defined in Fonts
-    color: Colors.white,
-    marginTop: 20, // Adjust as needed
-    fontstyle: "underline",
+  imagePreviewContainer: {
+    width: 200,
+    height: 200,
+    justifyContent: "center",
+    alignItems: "center",
+    marginVertical: 10,
   },
   imagePreview: {
-    width: 200,
+    width: "100%",
     borderRadius: 20,
-    height: 200,
-    marginVertical: 10,
+    height: "100%",
+  },
+  placeholderPreview: {
+    width: "100%",
+    height: "100%",
+    borderWidth: 1,
+    borderRadius: 20,
+    borderColor: "white", // You can set a placeholder background color or leave it transparent
   },
 };
 
