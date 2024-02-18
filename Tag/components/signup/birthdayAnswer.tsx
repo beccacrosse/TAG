@@ -66,20 +66,20 @@ const styles = StyleSheet.create({
     borderBottomColor: Colors.white,
   },
   list: {
-    height: 200,
+    height: 50,
     marginHorizontal: 4,
     alignContent: "center",
   },
   text: {
     fontFamily: fonts.answer.fontFamily,
-    fontSize: 18,
+    fontSize: 24,
     color: Colors.white,
   },
   selectedItem: {},
   selectedText: {
-    color: Colors.black,
+    color: Colors.white,
     fontWeight: "bold",
-    fontSize: 20,
+    fontSize: 24,
   },
   row: {
     flexDirection: "row",
@@ -140,7 +140,9 @@ const BirthdayPicker: React.FC<birthdayAnswerProps> = (
         />
       </View>
       {isComplete && (
-        <NextButton onPress={() => navigation.navigate("ProfilePic3")} />
+        <View style={pickerStyles.buttonContainer}>
+          <NextButton onPress={() => navigation.navigate("ProfilePic3")} />
+        </View>
       )}
     </View>
   );
@@ -149,6 +151,9 @@ const BirthdayPicker: React.FC<birthdayAnswerProps> = (
 const pickerStyles = StyleSheet.create({
   container: {
     padding: 10,
+  },
+  buttonContainer: {
+    marginTop: 20,
   },
 });
 

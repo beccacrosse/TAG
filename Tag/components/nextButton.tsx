@@ -4,6 +4,12 @@ import { TouchableOpacity, View, StyleSheet, Text } from "react-native";
 import fonts from "../branding/Fonts";
 import Colors from "../branding/Colors";
 
+interface buttonProps {
+  height?: number;
+  width?: number;
+  navigation?: any;
+}
+
 const IconButton = ({ onPress }) => {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
