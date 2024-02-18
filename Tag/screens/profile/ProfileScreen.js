@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
-import TopBar from '../../components/TopBar'; // Adjust the path as necessary
+import TopBar from '../../components/TopBar'; 
 
 function ProfileScreen() {
   return (

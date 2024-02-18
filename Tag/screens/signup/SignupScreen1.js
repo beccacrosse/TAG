@@ -7,8 +7,7 @@ import PhoneInput from "../../components/signup/phoneAnswer";
 const SignupScreen1 = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <QuestionBox text="What is your phone number?" />
-      <PhoneInput />
+      <TextInput placeholder="Name" style={styles.input} />
       <Button title="Next" onPress={() => navigation.navigate("Signup2")} />
     </View>
   );

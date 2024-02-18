@@ -1,9 +1,11 @@
 import React from 'react';
 import { View, Button } from 'react-native';
+import TopBar from '../../components/TopBar'; 
+import GroupSelector from '../../components/GroupSelector';
 
 function JoinorCreateScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View>
       <TopBar />
       <Button
         title="Join Group"
@@ -13,10 +15,8 @@ function JoinorCreateScreen({ navigation }) {
         title="Create Group"
         onPress={() => navigation.navigate('CreateGroup')}
       />
-      <Button
-        title="Go home bruh"
-        onPress={() => navigation.navigate('Home')}
-      />
+      <GroupSelector/>
+
     </View>
     
   );
