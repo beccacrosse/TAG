@@ -55,11 +55,9 @@ const ImageButton = () => {
         const { status } =
           await ImagePicker.requestMediaLibraryPermissionsAsync();
         if (status !== "granted") {
-          alert("Sorry, we need camera roll permissions to make this work!");
         }
         const cameraStatus = await ImagePicker.requestCameraPermissionsAsync();
         if (cameraStatus.status !== "granted") {
-          alert("Sorry, we need camera permissions to make this work!");
         }
       }
     })();
