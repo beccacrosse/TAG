@@ -12,5 +12,7 @@ export default {
   sherbert: "#F9935A", // lighter orange
   bright: "#EE6157", // lighter red
   moss: "#5F8A3F", // lighter green
-  selectedItem: "#EE6157"
+  selectedItem: "#EE6157",
+  dullGray: "#ECECEC",
+
 };

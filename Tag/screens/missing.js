@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: Colors.violet,
+    backgroundColor: Colors.mustard,
     padding: 20,
   },
   text: {
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 10,
     fontFamily: "Cutive",
-    lineHeight: 24,
+    lineHeight: 24, 
   },
 });
 
