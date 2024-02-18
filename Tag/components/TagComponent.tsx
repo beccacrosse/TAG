@@ -67,10 +67,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     lineHeight: 15,
   },
-  footer: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
   answerCount: {
     fontFamily: fonts.answer.fontFamily,
     fontSize: 10,
@@ -78,18 +74,28 @@ const styles = StyleSheet.create({
     color: "red",
     marginLeft: 10,
   },
+
+  footer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between", // Align items to each end
+    position: "absolute", // Position the footer absolutely
+    bottom: 5, // Position from the bottom
+    left: 10, // Position from the left
+    right: 10, // Position from the right
+  },
   imageContainer: {
     flexDirection: "row",
-    marginTop: 10,
-    marginLeft: 25,
   },
   image: {
-    width: 35,
-    height: 35,
-    borderRadius: 20,
-    borderWidth: 1,
-    borderColor: Colors.white,
-    marginLeft: -10,
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    marginLeft: -10, // Adjust for overlapping if desired
+  },
+  moreText: {
+    color: Colors.white,
+    fontWeight: "bold",
   },
 });
 
