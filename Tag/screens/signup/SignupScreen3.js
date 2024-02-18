@@ -6,7 +6,7 @@ const SignupScreen3 = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <TextInput placeholder="birthday" style={styles.input} />
-      <Button title="Next" onPress={() => navigation.navigate('Signup4')} />
+      <Button title="Next >" onPress={() => navigation.navigate('Signup4')} />
     </View>
   );
 };

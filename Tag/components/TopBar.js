@@ -7,17 +7,14 @@ function TopBar() {
 
   return (
     <View style={styles.container}>
-      {/* Left Button for Home */}
       <TouchableOpacity onPress={() => navigation.navigate('JoinorCreate')} style={styles.button}>
         <Text style={styles.buttonText}>Groups</Text>
       </TouchableOpacity>
 
-      {/* This is a placeholder for the title or any central element. Ensure it does not contain any stray text outside <Text>. */}
       <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.button}>
         <Text style={styles.buttonText}>Home</Text>
       </TouchableOpacity>
 
-      {/* Right Button for Profile */}
       <TouchableOpacity onPress={() => navigation.navigate('Profile')} style={styles.button}>
         <Text style={styles.buttonText}>Profile</Text>
       </TouchableOpacity>

@@ -1,12 +1,11 @@
-// screens/SignupScreen1.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, TextInput, Button, StyleSheet } from 'react-native';
 
-const SignupScreen5 = ({ navigation }) => {
+const SignupScreen1 = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <TextInput placeholder="Enter query here" style={styles.input} />
-      <Button title="Next >" onPress={() => navigation.navigate('Signup6')} />
+      <TextInput placeholder="Name" style={styles.input} />
+      <Button title="Sign in >>>" onPress={() => navigation.navigate('Home')} />
     </View>
   );
 };
@@ -26,4 +25,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignupScreen5;
+export default SignupScreen1;

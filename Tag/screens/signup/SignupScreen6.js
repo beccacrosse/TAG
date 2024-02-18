@@ -6,7 +6,7 @@ const SignupScreen1 = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <TextInput placeholder="Enter query here" style={styles.input} />
-      <Button title="Next" onPress={() => navigation.navigate('JoinorCreate')} />
+      <Button title="Next >" onPress={() => navigation.navigate('JoinorCreate')} />
     </View>
   );
 };
