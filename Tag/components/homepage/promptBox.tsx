@@ -1,73 +1,23 @@
 import React, { useState } from "react";
-import {
-  Dimensions,
-  Image,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-  SafeAreaView,
-  ScrollView,
-  Pressable,
-  FlexAlignType
-} from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
+import fonts from "../../branding/Fonts";
+import Colors from "../../branding/Colors";
 
 import { Avatar, Button, Card, Text } from 'react-native-paper';
 
-import Colors from "../../branding/Colors/Colors.ts";
-import { KeyboardType } from "react-native";
-
-interface questionBoxProps {
-  alignment?: FlexAlignType;
-  keyboardType?: KeyboardType;
-  onChange?: (text: string) => void;
-  placeholder?: string;
-  height?: number;
-  width?: number;
-  onConfirm?: (text: string) => void;
-  disabled?: boolean;
+interface promptBoxProps {
+  text?: string;
 }
-
-const MyComponent = () => (
-  <Card>
-    <Card.Title title="Card Title"/>
-  </Card>
-);
 
 const PromptBox: React.FC<promptBoxProps> = (props: promptBoxProps) => {
+  let prompt = props.text;
   
-  return 
-}
-const PromptBox: React.FC<questionBoxProps> = (props: questionBoxProps) => {
-  const [inputText, setInputText] = useState("");
-  let textBoxStyle = StyleSheet.compose(styles.container, {
-    alignItems: props.alignment,
-    height: props.height,
-    width: props.width,
-  });
-
   return (
-    <View style={styles.surround}>
-      <View style={textBoxStyle}>
-        <View style={styles.inputBox}>
-          <questionBox
-            style={styles.input}
-            placeholder={props.placeholder}
-            value={inputText}
-            placeholderTextColor={Colors.darkGray}
-            keyboardType={props.keyboardType}
-            onChangeText={(text) => {
-              setInputText(text);
-              if (props.onChange) props.onChange(text);
-            }}
-            onSubmitEditing={() => {
-              if (props.onConfirm) props.onConfirm(inputText);
-            }}
-            clearButtonMode="never"
-          />
-        </View>
-      </View>
-    </View>
+    <Card>
+      <Card.Content>
+        <Text style={styles.question}>{prompt}</Text>
+      </Card.Content>
+    </Card>
   );
 };
 
@@ -88,21 +38,10 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     paddingVertical: 20,
   },
-  image: {
-    marginRight: 10,
-    maxHeight: 25,
-    maxWidth: 40,
-    aspectRatio: 1,
-  },
-  inputBox: {
-    flexDirection: "row",
-  },
-  input: {
-    color: Colors.black,
-    marginHorizontal: 10,
-    fontSize: 16,
-    width: "100%",
+  question: {
+    ...fonts.question,
+    textAlign: "center",
   },
 });
 
-export default QuestionBox;
+export default PromptBox;
