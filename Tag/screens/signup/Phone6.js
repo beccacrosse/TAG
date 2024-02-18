@@ -23,11 +23,11 @@ const Phone6 = ({ navigation }) => {
   const handleSignUp = () => {
     // Validate user data
     if (!phoneNumber || !name || !birthday || !profilePicURL) {
-      console.log('phoneNumber:', phoneNumber);
-      console.log('name:', name);
-      console.log('birthday:', birthday);
-      console.log('profilePicURL:', profilePicURL);
-      Alert.alert('Error', 'Please fill in all fields.');
+      console.log("phoneNumber:", phoneNumber);
+      console.log("name:", name);
+      console.log("birthday:", birthday);
+      console.log("profilePicURL:", profilePicURL);
+      Alert.alert("Error", "Please fill in all fields.");
       return;
     }
     saveUserDataToFirestore();
@@ -37,11 +37,7 @@ const Phone6 = ({ navigation }) => {
     <View style={styles.container}>
       <FloatingBackButton navigation={navigation} />
       <QuestionBox text="What is your phone number?" />
-      <PhoneAnswer
-        navigation={navigation}
-      />
-      {/* Additional questions and components for collecting user data */}
-      <Button title="Sign Up" onPress={handleSignUp} />
+      <PhoneAnswer navigation={navigation} />
     </View>
   );
 };
@@ -63,4 +59,3 @@ const styles = StyleSheet.create({
 });
 
 export default Phone6;
-
