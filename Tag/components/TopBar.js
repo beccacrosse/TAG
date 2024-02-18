@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native"; // Ensure you're using React Navigation v5 or later
 import fonts from "../branding/Fonts";
 import SvgComponent from "../assets/images/groupsButton";
 import UserProfilePic from "../assets/images/lucy.jpg";
+import { getUserProfilePic } from "../DatabaseManager"; // Import the function
 
 function TopBar() {
   const navigation = useNavigation();
+  const [profilePic, setProfilePic] = useState(null);
+
+  useEffect(() => {
+    const fetchProfilePicture = async () => {
+      try {
+        const userId = "1";
+        const pic = await getUserProfilePic(userId);
+        setProfilePic(pic);
+      } catch (error) {
+        console.error("Error fetching profile picture:", error);
+      }
+    };
+
+    fetchProfilePicture();
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -29,7 +45,10 @@ function TopBar() {
           onPress={() => navigation.navigate("TagsScreen")}
           style={styles.profilePicButton}
         >
-          <Image source={UserProfilePic} style={styles.profilePic} />
+          <Image
+            source={profilePic ? { uri: profilePic } : UserProfilePic}
+            style={styles.profilePic}
+          />
         </TouchableOpacity>
       </View>
     </View>

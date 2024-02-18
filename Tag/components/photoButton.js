@@ -5,6 +5,7 @@ import Colors from "../branding/Colors";
 import { Platform } from "react-native";
 import Fonts from "../branding/Fonts";
 import QuestionBox from "./signup/questionBox";
+import { updateUserElement } from "../DatabaseManager"; // Import the function
 
 const ImageButton = () => {
   const [image, setImage] = useState(null);
@@ -18,10 +19,9 @@ const ImageButton = () => {
       quality: 1,
     });
 
-    console.log(result);
-
     if (!result.canceled) {
       setImage(result.assets[0].uri);
+      updateUser(result.assets[0].uri); // Update user data
     }
   };
 
@@ -33,13 +33,22 @@ const ImageButton = () => {
       quality: 1,
     });
 
-    console.log(result);
-
     if (!result.canceled) {
       setImage(result.assets[0].uri);
+      updateUser(result.assets[0].uri); // Update user data
     }
   };
-
+  const updateUser = async (imageuri) => {
+    try {
+      // Retrieve the user's data from AsyncStorage
+      const phone = "1"; // Or use appropriate user identifier
+      const updatedElement = { profilepic: imageuri }; // New photo to update
+      await updateUserElement(phone, updatedElement);
+      console.log("User element updated successfully");
+    } catch (error) {
+      console.error("Error updating user element:", error);
+    }
+  };
   useEffect(() => {
     (async () => {
       if (Platform.OS !== "web") {
@@ -62,10 +71,11 @@ const ImageButton = () => {
       <TouchableOpacity onPress={pickImage} style={styles.uploadButton}>
         <Text style={styles.uploadButtonText}>Upload from camera roll</Text>
       </TouchableOpacity>
-      {image && <Image source={{ uri: image }} style={styles.imagePreview} />}
+
       <TouchableOpacity onPress={takePhoto} style={styles.photoButton}>
         <Text style={styles.photoButtonText}>Take a photo</Text>
       </TouchableOpacity>
+      {image && <Image source={{ uri: image }} style={styles.imagePreview} />}
     </View>
   );
 };
