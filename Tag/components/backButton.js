@@ -13,7 +13,7 @@ const FloatingBackButton = () => {
       style={styles.backButton}
       onPress={() => navigation.goBack()}
     >
-      <MaterialIcons name="arrow-back" size={24} color="black" />
+      <MaterialIcons name="arrow-back" size={40} color="white" />
     </TouchableOpacity>
   );
 };
@@ -21,11 +21,8 @@ const FloatingBackButton = () => {
 const styles = StyleSheet.create({
   backButton: {
     position: "absolute",
-    top: 40,
-    left: 10,
-    backgroundColor: Colors.white,
-    borderRadius: 30,
-    padding: 8,
+    top: "5%",
+    left: "3%",
     zIndex: 10,
   },
 });
