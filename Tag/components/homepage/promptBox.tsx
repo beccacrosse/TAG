@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { Dimensions, StyleSheet } from "react-native";
+import { Dimensions, StyleSheet , View, Text} from "react-native";
 import fonts from "../../branding/Fonts";
 import Colors from "../../branding/Colors";
-
-import { Avatar, Button, Card, Text } from 'react-native-paper';
 
 interface promptBoxProps {
   text?: string;
@@ -13,15 +11,23 @@ const PromptBox: React.FC<promptBoxProps> = (props: promptBoxProps) => {
   let prompt = props.text;
   
   return (
-    <Card>
-      <Card.Content>
-        <Text style={styles.question}>{prompt}</Text>
-      </Card.Content>
-    </Card>
+    <View style={styles.card}>
+      <Text style={styles.prompt}> {prompt}</Text>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  card: {
+    paddingVertical: "10%",
+    paddingHorizontal: "5%",
+    backgroundColor: Colors.white,
+    height: 196,
+    width: 326,
+    borderRadius: 20,
+    shadowOpacity: 0,
+    shadowRadius: 0
+  },
   container: {
     backgroundColor: Colors.white,
     paddingVertical: 20,
@@ -38,9 +44,10 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     paddingVertical: 20,
   },
-  question: {
-    ...fonts.question,
+  prompt: {
+    ...fonts.prompt,
     textAlign: "center",
+    margin: 3
   },
 });
 
