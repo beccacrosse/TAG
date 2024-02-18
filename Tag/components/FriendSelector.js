@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import FriendOption from './FriendOption'; 
 import { useNavigation } from '@react-navigation/native';
 import Fonts from '../branding/Fonts';
+import FriendOption from './FriendOption';
 
 //this is not currently scrollable, need to implement for future use
 const FriendSelector = () => {
