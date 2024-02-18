@@ -17,7 +17,12 @@ const Stack = createNativeStackNavigator();
 
 function AppNavigator() {
   return (
-    <Stack.Navigator initialRouteName="LoginScreen">
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false, // This hides the header globally for all screens
+      }}
+      initialRouteName="LoginScreen"
+    >
       <Stack.Screen
         name="LoginScreen"
         component={LoginScreen}
