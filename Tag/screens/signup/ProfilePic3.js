@@ -11,7 +11,9 @@ const ProfilePic3 = ({ navigation }) => {
     <View style={styles.container}>
       <FloatingBackButton navigation={navigation} />
       <ImageButton />
-      <NextButton onPress={() => navigation.navigate("Phone6")} />
+      <View style={styles.button}>
+        <NextButton onPress={() => navigation.navigate("Phone6")} />
+      </View>
     </View>
   );
 };
@@ -22,6 +24,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: Colors.lazy,
+    padding: 20,
+  },
+  button: {
+    marginBottom: 100,
   },
 });
 

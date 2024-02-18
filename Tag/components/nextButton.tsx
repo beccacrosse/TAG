@@ -7,6 +7,7 @@ import Colors from "../branding/Colors";
 interface buttonProps {
   height?: number;
   width?: number;
+  marginBottom?: number;
   navigation?: any;
 }
 

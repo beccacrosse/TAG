@@ -98,6 +98,7 @@ const styles = {
   uploadButtonText: {
     ...Fonts.question, // Assuming you have this style defined in Fonts
     color: Colors.white,
+    fontSize: 20,
     textAlign: "center",
   },
   photoButton: {
@@ -112,7 +113,8 @@ const styles = {
     paddingVertical: 10,
   },
   photoButtonText: {
-    ...Fonts.question, // Assuming you have this style defined in Fonts
+    ...Fonts.question,
+    fontSize: 20,
     color: Colors.white,
     textAlign: "center",
   },
@@ -124,6 +126,7 @@ const styles = {
   },
   imagePreview: {
     width: 200,
+    borderRadius: 20,
     height: 200,
     marginVertical: 10,
   },
