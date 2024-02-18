@@ -32,14 +32,14 @@ const YourResponse = ({ onSubmit }) => {
         aspect: [4, 3],
         quality: 1,
       });
-
+  
       if (!result.cancelled) {
         setSelectedImage(result.uri);
       }
     } catch (error) {
       console.error('Error picking image:', error);
     }
-  };
+  };  
 
   return (
     <View style={styles.container}>
@@ -62,24 +62,21 @@ const YourResponse = ({ onSubmit }) => {
 
         <View style={styles.footer}>  
           
-          <View style={{ flexDirection: 'row' }}>
-            <Pressable onPress={pickImage}>
+          <View style={{ flexDirection: 'row'}}>
+            <Pressable style={{ paddingRight: 5}} onPress={{}}>
               <FontAwesome name="microphone" size={24} color="black" />
             </Pressable>
-            <Pressable onPress={() => {
-              onSubmit(responseText, selectedImage); // Pass selectedImage to the onSubmit function
-              setResponseText('');
-              setSelectedImage(null); // Clear selected image after submission
-            }}>
+            <Pressable onPress={pickImage}>
               <FontAwesome name="photo" size={24} color="black" />
             </Pressable>
           </View>
+
           <Pressable onPress={() => {
             onSubmit(responseText, selectedImage); // Pass selectedImage to the onSubmit function
             setResponseText('');
             setSelectedImage(null); // Clear selected image after submission
           }}>
-            <MaterialCommunityIcons name="send-circle" size={24} color="black" />
+            <MaterialCommunityIcons name="send" size={24} color="black" />
           </Pressable>
         </View>
       </View>
@@ -118,6 +115,7 @@ const styles = StyleSheet.create({
     minHeight: 100, // Make the text input a bit larger
   },
   footer: {
+    width: "100%",
     flexDirection: 'row',
     justifyContent: 'space-between', // Space between children
     alignItems: 'center',

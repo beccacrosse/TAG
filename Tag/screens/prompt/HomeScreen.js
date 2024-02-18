@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, ScrollView, Text, StyleSheet, FlatList } from 'react-native';
+import { View, ScrollView, Text, StyleSheet, FlatList, SafeAreaView } from 'react-native';
 import Images from '../../assets/images/images';
 import TopBar from '../../components/TopBar';
 import PromptBox from '../../components/homepage/PromptBox';
@@ -35,6 +35,7 @@ function HomeScreen({ route }) {
     <View style={styles.container}>
       <TopBar />
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent}>
+      <SafeAreaView>
         <PromptBox text="This is an example prompt. How do you feel today?" />
         {!respondedToday && <YourResponse onSubmit={handleResponseSubmit} />}
         <View style={styles.responsesContainer}>
@@ -52,7 +53,8 @@ function HomeScreen({ route }) {
             )}
           />
         </View> 
-        {selectedGroupName && <Text style={styles.groupName}>Selected Group: {selectedGroupName}</Text>}
+        {selectedGroupName && <Text style={styles.groupName}>Tagging... {selectedGroupName}</Text>}
+        </SafeAreaView>
       </ScrollView>
     </View>
   );
