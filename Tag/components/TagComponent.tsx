@@ -4,13 +4,6 @@ import { View, Text, Image, Pressable, StyleSheet } from "react-native";
 import Colors from "../branding/Colors";
 import fonts from "../branding/Fonts";
 import { AntDesign } from "@expo/vector-icons";
-const getImageSource = (imgSrc) => {
-  if (typeof imgSrc === "string" && imgSrc.startsWith("http")) {
-    return { uri: imgSrc };
-  } else {
-    return imgSrc;
-  }
-};
 
 const TagComponent = ({
   question,
@@ -36,13 +29,9 @@ const TagComponent = ({
           {numberOfAnswers}/{totalAnswers}
         </Text>
         <View style={styles.imageContainer}>
-          {images.map((imgSrc, index) => (
-            <Image
-              key={index}
-              source={getImageSource(imgSrc)}
-              style={styles.image}
-            />
-          ))}
+          {images.map((imagePath, index) => {
+            <Image source={imagePath} style={styles.profilePic} />;
+          })}
         </View>
       </View>
     </View>
@@ -91,6 +80,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   image: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    marginLeft: -5,
+  },
+  profilePic: {
     width: 24,
     height: 24,
     borderRadius: 12,

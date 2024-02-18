@@ -10,7 +10,8 @@ import JoinorCreateScreen from "../screens/groups/JoinorCreateScreen";
 import JoinGroupScreen from "../screens/groups/JoinGroupScreen";
 import CreateGroupScreen from "../screens/groups/CreateGroupScreen";
 import HomeScreen from "../screens/prompt/HomeScreen";
-import ProfileScreen from "../screens/profile/ProfileScreen";
+import TagsScreen from "../screens/profile/TagsScreen";
+import ScrapsScreen from "../screens/profile/ScrapsScreen";
 import LoginScreen from "../screens/signup/LoginScreen0";
 
 const Stack = createNativeStackNavigator();
@@ -38,7 +39,8 @@ function AppNavigator() {
       <Stack.Screen name="JoinGroup" component={JoinGroupScreen} />
       <Stack.Screen name="CreateGroup" component={CreateGroupScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Profile" component={ProfileScreen} />
+      <Stack.Screen name="TagsScreen" component={TagsScreen} />
+      <Stack.Screen name="ScrapsScreen" component={ScrapsScreen} />
     </Stack.Navigator>
   );
 }
