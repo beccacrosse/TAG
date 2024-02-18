@@ -1,24 +1,33 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import TopBar from '../../components/TopBar';
+import { db } from '../../firebase'; 
+import { addDoc, collection } from 'firebase/firestore';
 
 function CreateGroupScreen() {
   const [groupName, setGroupName] = useState('');
   const [groupPin, setGroupPin] = useState('');
   const [phoneNumbers, setPhoneNumbers] = useState([]);
 
-  // Function to generate an 8-digit group pin
   const generateGroupPin = () => Math.random().toString().substr(2, 8);
 
-  // Function to handle creating a group
-  const handleCreateGroup = () => {
-    const newGroupPin = generateGroupPin(); // Generate a new group pin
-    setGroupPin(newGroupPin);
-    // Here, you would typically send the data to a backend or store it in state
-    console.log(`Group Created: ${groupName} with Pin: ${newGroupPin}`);
-    // Reset states if necessary
-    setGroupName('');
-    setPhoneNumbers([]);
+  const handleCreateGroup = async () => {
+    const newGroupPin = generateGroupPin();
+    try {
+      // Create a new group in Firestore
+      await addDoc(collection(db, "groups"), {
+        groupName,
+        groupPin: newGroupPin,
+        phoneNumbers,
+      });
+      console.log(`Group Created: ${groupName} with Pin: ${newGroupPin}`);
+      // Reset states if necessary
+      setGroupName('');
+      setGroupPin(newGroupPin); // Optionally display the new pin
+      setPhoneNumbers([]);
+    } catch (error) {
+      console.error("Error adding document: ", error);
+    }
   };
 
   return (
@@ -34,7 +43,6 @@ function CreateGroupScreen() {
         />
         <Button title="Create Group" onPress={handleCreateGroup} />
         <Text>Group Pin: {groupPin}</Text>
-        {/* Additional functionality for adding people and sharing a link would be implemented here */}
       </View>
     </View>
   );
@@ -56,6 +64,15 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     padding: 10,
     marginBottom: 10,
+  },
+  bottomBar: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    height: 50,
+    backgroundColor: '#eee',
+    borderTopWidth: 1,
+    borderTopColor: '#ccc',
   },
 });
 

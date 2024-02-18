@@ -33,9 +33,10 @@ function TopBar() {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    marginTop: 35,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     height: 50,
     paddingHorizontal: 10,
     backgroundColor: "#6200EE",
