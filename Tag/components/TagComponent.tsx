@@ -30,7 +30,9 @@ const TagComponent = ({
         </Text>
         <View style={styles.imageContainer}>
           {images.map((imagePath, index) => {
-            <Image source={imagePath} style={styles.profilePic} />;
+            return (
+              <Image key={index} source={imagePath} style={styles.image} />
+            );
           })}
         </View>
       </View>
@@ -68,28 +70,26 @@ const styles = StyleSheet.create({
   footer: {
     flexDirection: "row",
     alignItems: "center",
-    marginHorizontal: "30%",
   },
   answerCount: {
     fontFamily: fonts.answer.fontFamily,
     fontSize: 10,
-    marginTop: 10,
+    marginTop: 5,
     color: "red",
+    marginLeft: 10,
   },
   imageContainer: {
     flexDirection: "row",
+    marginTop: 10,
+    marginLeft: 25,
   },
   image: {
-    width: 24,
-    height: 24,
-    borderRadius: 12,
-    marginLeft: -5,
-  },
-  profilePic: {
-    width: 24,
-    height: 24,
-    borderRadius: 12,
-    marginLeft: -5,
+    width: 35,
+    height: 35,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: Colors.white,
+    marginLeft: -10,
   },
 });
 

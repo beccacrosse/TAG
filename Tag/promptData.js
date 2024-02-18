@@ -4,8 +4,8 @@ const data = [
     question: "What's something that you think I need to hear right now?",
     numberOfAnswers: "2",
     images: [
-      "../assets/images/userprofilepic.jpg",
-      "../assets/images/userprofilepic.jpg",
+      require("./assets/images/userprofilepic.jpg"),
+      require("./assets/images/amazon_pfp.png"),
     ],
   },
   {
