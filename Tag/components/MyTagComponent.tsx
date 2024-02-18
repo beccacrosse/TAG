@@ -5,7 +5,7 @@ import Colors from "../branding/Colors";
 import fonts from "../branding/Fonts";
 import { AntDesign } from "@expo/vector-icons";
 
-const TagComponent = ({
+const MyTagComponent = ({
   question,
   numberOfAnswers,
   totalAnswers = 4,
@@ -99,4 +99,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TagComponent;
+export default MyTagComponent;

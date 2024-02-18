@@ -43,7 +43,7 @@ function MyScrapsScreen({ navigation }) {
             source={profilePic ? { uri: profilePic } : UserProfilePic}
             style={styles.profilePic}
           />
-          <Text style={styles.title}>PErsonal 🍑🐜</Text>
+          <Text style={styles.title}>Your Profile</Text>
           <View style={styles.tabContainer}>
             <TouchableOpacity
               onPress={() => navigation.navigate("MyTagsScreen")}
