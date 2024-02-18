@@ -63,7 +63,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   buttonText: {
-    fontSize: 16,
     ...fonts.header,
     alignContent: "center",
   },

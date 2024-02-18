@@ -16,17 +16,22 @@ const textStyle = StyleSheet.create({
     fontFamily: "Cutive",
     fontSize: 20,
     color: Colors.black,
-    lineHeight: 40
+    lineHeight: 40,
   },
   promptResponse: {
     fontFamily: "Cutivemono",
     fontSize: 20,
-    color: Colors.black
+    color: Colors.black,
   },
   responseHeader: {
     fontFamily: "Cutive",
     fontSize: 10,
-    color: Colors.black
+    color: Colors.black,
+  },
+  header: {
+    fontFamily: "PermanentMarker",
+    fontSize: 24,
+    color: Colors.white,
   },
 });
 
