@@ -13,6 +13,8 @@ import HomeScreen from "../screens/prompt/HomeScreen";
 import TagsScreen from "../screens/profile/TagsScreen";
 import ScrapsScreen from "../screens/profile/ScrapsScreen";
 import LoginScreen from "../screens/signup/LoginScreen0";
+import MyScrapsScreen from "../screens/myProfile/MyScrapsScreen";
+import MyTagsScreen from "../screens/myProfile/MyTagsScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -41,6 +43,8 @@ function AppNavigator() {
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="TagsScreen" component={TagsScreen} />
       <Stack.Screen name="ScrapsScreen" component={ScrapsScreen} />
+      <Stack.Screen name="MyTagsScreen" component={MyTagsScreen} />
+      <Stack.Screen name="MyScrapsScreen" component={MyScrapsScreen} />
     </Stack.Navigator>
   );
 }
