@@ -1,5 +1,5 @@
 const Images = {
-  dia: require("./amazon_pfp.png"),
+  dia: require("./dia.png"),
 };
 
 export default Images;

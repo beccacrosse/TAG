@@ -1,7 +1,7 @@
 const data = [
   {
     isVideo: false,
-    image: require("./assets/images/amazon_pfp.png"),
+    image: require("./assets/images/dia.png"),
   },
 ];
 export default data;
