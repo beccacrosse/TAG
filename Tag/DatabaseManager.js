@@ -59,6 +59,28 @@ export const updateUserElement = async (userId, updatedElement) => {
     console.error("Error updating user element:", error);
   }
 };
+export const getUsername = async (userId) => {
+  try {
+    // Retrieve the user's data from AsyncStorage
+    const usersJSON = await AsyncStorage.getItem("users");
+    const users = usersJSON ? JSON.parse(usersJSON) : [];
+
+    // Find the user with the provided userId
+    const user = users.find((user) => user.phone === userId);
+
+    // If user with the provided userId is found
+    if (user) {
+      // Return the username of the user
+      return user.name;
+    } else {
+      console.warn("User not found with id:", userId);
+      return null; // Return null if user not found
+    }
+  } catch (error) {
+    console.error("Error getting username:", error);
+    return null; // Return null if error occurs
+  }
+};
 export const getUserProfilePic = async (userId) => {
   try {
     // Retrieve the user's data from AsyncStorage

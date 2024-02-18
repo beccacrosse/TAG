@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
-import { saveUser, removeAllUsers } from "../../DatabaseManager";
+import { saveUser } from "../../DatabaseManager";
 
 function LoginScreen({ navigation }) {
   const createNewUser = async () => {
