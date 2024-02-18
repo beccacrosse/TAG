@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.22.0",
     "react-native-audio-recorder-player": "^3.6.6"
   }
 }

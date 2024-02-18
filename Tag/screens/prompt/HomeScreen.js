@@ -15,6 +15,7 @@ function HomeScreen({ route }) {
     { avi: Images.dia, name: "Example name 4", timestamp: "34", text: "Response text 4" },
     { avi: Images.dia, name: "Example name 5", timestamp: "35", text: "Response text 5" }
   ];
+  
   const { selectedGroupName } = route.params || {};
   const [respondedToday, setRespondedToday] = useState(false);
   const [responses, setResponses] = useState(data); // This will store the array of response texts
@@ -38,7 +39,7 @@ function HomeScreen({ route }) {
       <SafeAreaView>
         <PromptBox text="This is an example prompt. How do you feel today?" />
         {!respondedToday && <YourResponse onSubmit={handleResponseSubmit} />}
-        <View style={styles.responsesContainer}>
+        <View style={respondedToday? styles.responsesContainer : {display: "none"}}>
           <FlatList
             data={responses}
             keyExtractor={(item, index) => index.toString()}
