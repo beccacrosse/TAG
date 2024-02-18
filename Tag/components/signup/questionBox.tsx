@@ -17,7 +17,7 @@ const QuestionBox: React.FC<questionBoxProps> = (props: questionBoxProps) => {
 
   return (
     <View style={styles.surround}>
-      <Text style={styles.question} />
+      <Text style={styles.question}> {questionText}</Text>
     </View>
   );
 };
@@ -28,9 +28,9 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     paddingHorizontal: 12,
     marginLeft: 20,
-    // Full width
+    width: "auto",
+    height: "auto",
     justifyContent: "center",
-    // Shadow
   },
   surround: {
     flexDirection: "column",
