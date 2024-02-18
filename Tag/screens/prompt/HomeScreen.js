@@ -6,6 +6,7 @@ import {
   StyleSheet,
   FlatList,
   SafeAreaView,
+  VirtualizedList,
 } from "react-native";
 import Images from "../../assets/images/images";
 import TopBar from "../../components/TopBar";
@@ -117,7 +118,14 @@ function HomeScreen({ route }) {
       text: "Sometimes I'm just too curious about things.",
     },
   ];
-
+  const renderItem = ({ item }) => (
+    <Response
+      avi={item.avi}
+      name={item.name}
+      timestamp={item.timestamp}
+      text={item.text}
+    />
+  );
   const { selectedGroupName } = route.params || {};
   const [currentPrompt, setCurrentPrompt] = useState(prompt1);
   const [responses, setResponses] = useState(data1);
@@ -175,18 +183,13 @@ function HomeScreen({ route }) {
           )}
           {myResponse && (
             <View style={styles.responsesContainer}>
-              <FlatList
+              <VirtualizedList
                 data={responses}
+                initialNumToRender={4} // Number of items to render initially
+                renderItem={renderItem}
                 keyExtractor={(item, index) => index.toString()}
-                renderItem={({ item, index }) => (
-                  <Response
-                    key={index}
-                    avi={item.avi}
-                    name={item.name}
-                    timestamp={item.timestamp}
-                    text={item.text}
-                  />
-                )}
+                getItemCount={(data) => data.length}
+                getItem={(data, index) => data[index]}
               />
             </View>
           )}
