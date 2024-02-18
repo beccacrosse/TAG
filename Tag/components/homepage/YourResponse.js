@@ -7,7 +7,7 @@ const YourResponse = ({ onSubmit }) => {
   return (
       <View style={styles.card}>
         <View style={styles.inputContainer}>
-          <TextInput
+          {/* <TextInput
             style={styles.input}
             placeholder="Your response..."
             value={responseText}
@@ -20,7 +20,7 @@ const YourResponse = ({ onSubmit }) => {
               onSubmit(responseText); 
               setResponseText(''); 
             }}
-          />
+          /> */}
         </View>
       </View>
 
