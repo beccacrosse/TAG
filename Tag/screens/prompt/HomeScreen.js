@@ -49,15 +49,15 @@ function HomeScreen({ route }) {
   };
   useEffect(() => {
     switch (selectedGroupName) {
-      case 'Group 1':
+      case '1. Backend Baddies':
         setCurrentPrompt(prompt1);
         setResponses(data1);
         break;
-      case 'Group 2':
+      case '2. Family':
         setCurrentPrompt(prompt2);
         setResponses(data2);
         break;
-      case 'Group 3':
+      case '3. Home Friends':
         setCurrentPrompt(prompt3);
         setResponses(data3);
         break;

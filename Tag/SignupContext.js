@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState } from 'react';
 
 const SignupContext = createContext();
 
@@ -8,7 +8,7 @@ export const SignupProvider = ({ children }) => {
   const [signupData, setSignupData] = useState({});
 
   const saveSignupData = (key, value) => {
-    setSignupData((prevData) => ({
+    setSignupData(prevData => ({
       ...prevData,
       [key]: value,
     }));
@@ -20,3 +20,4 @@ export const SignupProvider = ({ children }) => {
     </SignupContext.Provider>
   );
 };
+
