@@ -6,6 +6,10 @@ function JoinGroupScreen() {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Join Group Screen</Text>
+      <Button
+        title="Go home bruh"
+        onPress={() => navigation.navigate('Home')}
+      />
     </View>
   );
 }
