@@ -1,14 +1,16 @@
 import React from "react";
-import { View, TextInput, Button, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import QuestionBox from "../../components/signup/questionBox";
+import TextAnswer from "../../components/signup/textAnswer";
 import Colors from "../../branding/Colors";
-import PhoneInput from "../../components/signup/phoneAnswer";
+import FloatingBackButton from "../../components/backButton";
 
-const SignupScreen1 = ({ navigation }) => {
+const Name1 = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <TextInput placeholder="Name" style={styles.input} />
-      <Button title="Next" onPress={() => navigation.navigate("Signup2")} />
+      <FloatingBackButton navigation={navigation} />
+      <QuestionBox text="What is your name?" />
+      <TextAnswer navigation={navigation} />
     </View>
   );
 };
@@ -18,7 +20,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: Colors.violet,
+    backgroundColor: Colors.rootedLight,
   },
   input: {
     borderWidth: 1,
@@ -29,4 +31,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignupScreen1;
+export default Name1;

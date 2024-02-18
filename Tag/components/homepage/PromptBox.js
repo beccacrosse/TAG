@@ -9,7 +9,7 @@ interface promptBoxProps {
 
 const PromptBox: React.FC<promptBoxProps> = (props: promptBoxProps) => {
   let prompt = props.text;
-  
+
   return (
     <View style={styles.card}>
       <Text style={styles.prompt}> {prompt}</Text>
@@ -30,12 +30,11 @@ const styles = StyleSheet.create({
   },
   container: {
     backgroundColor: Colors.white,
-    paddingVertical: 20,
+    paddingVertical: 30,
     paddingHorizontal: 12,
     marginLeft: 20,
-    // Full width
     justifyContent: "center",
-    // Shadow
+
   },
   surround: {
     flexDirection: "column",

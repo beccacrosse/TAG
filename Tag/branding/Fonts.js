@@ -3,11 +3,12 @@ import Colors from "./Colors";
 const textStyle = StyleSheet.create({
   question: {
     fontFamily: "Cutive",
-    fontSize: 20,
+    fontSize: 28,
     color: Colors.white,
+    lineHeight: 40,
   },
   answer: {
-    fontFamily: "Cutivemono",
+    fontFamily: "CutiveMono",
     fontSize: 44,
     color: Colors.white,
   },

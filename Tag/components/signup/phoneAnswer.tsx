@@ -1,28 +1,60 @@
 import React, { useState } from "react";
-import { TextInput, View, StyleSheet, Button } from "react-native";
+import { View, StyleSheet, TextInput } from "react-native";
+import { KeyboardType } from "react-native";
 import fonts from "../../branding/Fonts";
 import Colors from "../../branding/Colors";
+import NextButton from "../../components/nextButton";
 
-const PhoneInput = () => {
+interface phoneAnswerProps {
+  keyboardType?: KeyboardType;
+  text?: string;
+  height?: number;
+  width?: number;
+  navigation?: any;
+}
+
+const formatPhoneNumber = (phoneNumber) => {
+  // Function to format phone number as the user types
+  let formattedNumber = phoneNumber.replace(/\D/g, ""); // Remove non-digit characters
+  if (formattedNumber.length > 6) {
+    // Format as "123 456 7890" for simplicity
+    return `${formattedNumber.slice(0, 3)} ${formattedNumber.slice(
+      3,
+      6
+    )} ${formattedNumber.slice(6, 10)}`;
+  } else if (formattedNumber.length > 3) {
+    // Format as "123 456" partway through
+    return `${formattedNumber.slice(0, 3)} ${formattedNumber.slice(3, 6)}`;
+  } else {
+    // No formatting needed for first three digits
+    return formattedNumber;
+  }
+};
+const PhoneInput: React.FC<phoneAnswerProps> = (props: phoneAnswerProps) => {
   const [phoneNumber, setPhoneNumber] = useState("");
+  let navigation = props.navigation;
+
+  // Update to use formatPhoneNumber
+  const handleChange = (text) => {
+    const formattedText = formatPhoneNumber(text);
+    setPhoneNumber(formattedText);
+  };
 
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        onChangeText={setPhoneNumber}
+        onChangeText={handleChange} // Use handleChange here
         value={phoneNumber}
         placeholder="___ ___ ____"
         keyboardType="phone-pad"
         textContentType="telephoneNumber"
-        maxLength={10} // Set the max length to 10
+        maxLength={14} // Update maxLength to accommodate spaces
       />
-      {phoneNumber.length === 10 && ( // Render the button only when phoneNumber length is 10
+
+      {phoneNumber.length === 12 && ( // Adjust condition to check for formatted length
         <View style={styles.buttonContainer}>
-          <Button
-            title="Next"
-            onPress={() => console.log("Go to the next step")}
-          />
+          <NextButton onPress={() => navigation.navigate("JoinorCreate")} />
         </View>
       )}
     </View>
@@ -33,14 +65,10 @@ const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 15,
     paddingVertical: 10,
-    borderRadius: 10, // Adjust as needed
-    backgroundColor: Colors.white, // Assuming you have a white color defined in Colors
   },
   input: {
     ...fonts.answer,
     padding: 10,
-
-    borderBottomWidth: 1, // To show an underline as in the image
   },
   buttonContainer: {
     marginTop: 10, // Add some spacing above the button
