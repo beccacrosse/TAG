@@ -1,5 +1,5 @@
-# treehacks2024
-our treehacks project :D
+# TAG
+our treehacks 2024 project :D
 # Inspiration
 The inspiration for "Tag" came from a desire to bridge the gap between people, across all ages and interests, in a deeply personal yet digital way. Recognizing the limitations of existing social platforms in fostering genuine connections that have become less social and more media-centric, especially during times when physical distances have grown, "Tag" seeks to reintroduce the intimacy and authenticity often missing from our online interactions.
 
